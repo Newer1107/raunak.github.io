@@ -1,15 +1,13 @@
-/*===== MENU SHOW =====*/ 
-const showMenu = (toggleId, navId) =>{
-    const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
-
-    if(toggle && nav){
-        toggle.addEventListener('click', ()=>{
-            nav.classList.toggle('show')
-        })
-    }
+var pos1 = window.pageYOffset;
+window.onscroll = function() {
+var pos2 = window.pageYOffset;
+  if (pos1 > pos2) {
+    document.getElementById("nav-menu2").style.top = "0";
+  } else {
+    document.getElementById("nav-menu2").style.top = "-50px";
+  }
+  pos1 = pos2;
 }
-showMenu('nav-toggle','nav-menu')
 
 /*==================== REMOVE MENU MOBILE ====================*/
 const navLink = document.querySelectorAll('.nav__link')
