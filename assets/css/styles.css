@@ -124,14 +124,6 @@ img {
   align-items: center;
   font-weight: var(--font-semi);
 }
-#nav-menu2 {
-  position: fixed;
-  top: 0;
-  transition: top 0.5s;
-
-}
-
-
 
 @media screen and (max-width: 767px) {
   .nav__menu {
