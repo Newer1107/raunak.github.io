@@ -118,12 +118,24 @@ img {
 
 /*===== NAV =====*/
 .nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: top 0.3s ease-in-out;
+  opacity: 1;
+  background-color: white;
   height: var(--header-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-weight: var(--font-semi);
 }
+.nav.hide {
+  top: -100px;
+  opacity: 0;
+}
+
 
 @media screen and (max-width: 767px) {
   .nav__menu {
