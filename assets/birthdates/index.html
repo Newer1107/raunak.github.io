@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+  <title>Birthdates</title>
+<style>
+
+</style>
+
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+
+</head>
+<body>
+
+  <h1>BirthDates</h1>
+  <form onsubmit="handleSubmit(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="birthdate">Birthdate:</label>
+    <input type="date" id="birthdate" name="birthdate" required><br>
+
+    <button type="submit">Submit</button>
+    <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Birthday <i>[dd/mm/yyyy]</i></th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+      
+  </form>
+  <script src="script.js"></script>
+</body>
+</html>
