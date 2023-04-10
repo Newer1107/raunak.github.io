@@ -1,13 +1,12 @@
-require('dotenv').config();
 var firebaseConfig = {
-  apiKey: process.env.apiKey,
-  authDomain: process.env.authDomain,
-  databaseURL: process.env.databaseURL,
-  projectId: process.env.projectId,
-  storageBucket: process.env.storageBucket,
-  messagingSenderId: process.env.messagingSenderId,
-  appId: process.env.messagingSenderId,
-  measurementId: process.env.measurementId
+    apiKey: "AIzaSyCOoXNQIyjeeTFhEBWSp-ux4x2c7oszNyQ",
+  authDomain: "someproject-38ec0.firebaseapp.com",
+  databaseURL: "https://someproject-38ec0-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "someproject-38ec0",
+  storageBucket: "someproject-38ec0.appspot.com",
+  messagingSenderId: "753262877001",
+  appId: "1:753262877001:web:fcd6854580378aa8b46298",
+  measurementId: "G-GS4MPRM7J7"
 };
 
 // Initialize Firebase
