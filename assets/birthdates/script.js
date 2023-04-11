@@ -72,50 +72,6 @@ usersRef.on('value', function(snapshot) {
     tableBody.appendChild(row);
   }
 });
-
-function displayUpcomingBirthday(users) {
-    var today = new Date(); // get the current date
-    var closestBirthdayUser = null; // initialize the closest birthday user to null
-    var closestBirthday = Infinity; // initialize the closest birthday to infinity
-  
-    // Loop through the users to find the user with the closest upcoming birthday
-    for (var key in users) {
-      var user = users[key]; // get the user data
-      var userBirthday = new Date(user.birthdate); // parse the user's birthdate string into a Date object
-      userBirthday.setFullYear(today.getFullYear()); // set the year of the user's birthday to the current year
-  
-      // Calculate the difference between the user's birthday and today's date
-      var timeDiff = userBirthday.getTime() - today.getTime();
-      var daysDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
-  
-      // If the user's birthday is today, display a "Happy Birthday" message
-      if (daysDiff == 0) {
-        var message = "HAPPY BIRTHDAY " + user.name.toUpperCase() + "!";
-        var birthdayMessage = document.getElementById("birthday-message");
-        birthdayMessage.innerHTML = message;
-        birthdayMessage.style.fontWeight = "bold";
-        birthdayMessage.style.fontSize = "24px";
-        birthdayMessage.style.color = "#FFC107";
-        return;
-      }
-  
-      // If the user's birthday is in the future and closer than the current closest birthday, update the closest birthday user
-      if (daysDiff > 0 && daysDiff < closestBirthday) {
-        closestBirthdayUser = user;
-        closestBirthday = daysDiff;
-      }
-    }
-  
-    // If no user has a birthday today, display a "Upcoming Birthday" message for the user with the closest upcoming birthday
-    if (closestBirthdayUser) {
-      var message = "UPCOMING BIRTHDAY: " + closestBirthdayUser.name.toUpperCase() + " in " + closestBirthday + " day(s)!";
-      var birthdayMessage = document.getElementById("birthday-message");
-      birthdayMessage.innerHTML = message;
-      birthdayMessage.style.fontWeight = "bold";
-      birthdayMessage.style.fontSize = "24px";
-      birthdayMessage.style.color = "#FFC107";
-    }
-  }
   
   if (window.history.replaceState) {
     // Get the current URL path
@@ -124,3 +80,17 @@ function displayUpcomingBirthday(users) {
     // Replace the current URL with the desired URL
     window.history.replaceState({}, '', path.replace('/assets/birthdates/index.html', '/birthdates'));
   }
+  const searchInput = document.getElementById('search-input');
+
+searchInput.addEventListener('input', function() {
+  const filter = searchInput.value.toUpperCase();
+  const tableRows = document.querySelectorAll('#table-body tr');
+  tableRows.forEach(function(row) {
+    const name = row.cells[0].textContent.toUpperCase();
+    if (name.indexOf(filter) > -1) {
+      row.style.display = '';
+    } else {
+      row.style.display = 'none';
+    }
+  });
+});
