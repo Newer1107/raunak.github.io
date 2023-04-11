@@ -149,7 +149,7 @@ function showClosestBirthday() {
       closestBirthdayText = closestBirthdayName + "'s birthday is the closest which is in " + closestBirthday + " days, ";
       closestBirthdayText += Math.floor(timeUntilBirthday / (1000 * 60 * 60)) + " hours, ";
       closestBirthdayText += Math.floor((timeUntilBirthday % (1000 * 60 * 60)) / (1000 * 60)) + " minutes, and ";
-      closestBirthdayText += Math.floor((timeUntilBirthday % (1000 * 60)) / 1000) + " seconds.";
+      closestBirthdayText += Math.floor((timeUntilBirthday % (1000 * 60)) / 1000) + " seconds!";
       document.getElementById('closest-birthday').textContent = closestBirthdayText;
     }, 1000);
   });
