@@ -54,3 +54,12 @@ function updateCPS() {
 }
 
 startBtn.addEventListener("click", startTimer);
+
+
+if (window.history.replaceState) {
+  // Get the current URL path
+  var path = window.location.pathname;
+  
+  // Replace the current URL with the desired URL
+  window.history.replaceState({}, '', path.replace('/assets/cps-tracker/index.html', '/cps-tracker'));
+}
