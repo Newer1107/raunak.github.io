@@ -17,14 +17,14 @@
   <h1>BirthDates</h1>
   <form onsubmit="handleSubmit(event)">
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br>
+    <input type="text" id="name" name="name" required placeholder="Enter your Name:"><br>
 
     <label for="birthdate">Birthdate:</label>
     <input type="date" id="birthdate" name="birthdate" required min="1924-01-01" max="2023-01-01"><br>
 
     <button type="submit">Submit</button>
     <label for="search-input" class="search-label">Search:</label>
-        <input type="text" id="search-input" class="search-input" style="width: 100%;">
+        <input type="text" id="search-input" class="search-input" style="width: 100%;" placeholder="Search for Names:">
 
     <table>
         <thead>
@@ -37,6 +37,11 @@
       </table>
       
   </form>
+  
+  <button onclick="window.location.href='https://aboutraunak.tk'" class="button-end">Go to Home</button>
+
+  
+  
   <script src="script.js"></script>
 </body>
 </html>
