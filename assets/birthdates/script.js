@@ -94,3 +94,70 @@ searchInput.addEventListener('input', function() {
     }
   });
 });
+
+function showClosestBirthday() {
+  var usersRef = database.ref('users');
+  var closestBirthday = null;
+  var closestBirthdayName = null;
+
+  usersRef.once('value', function(snapshot) {
+    var users = snapshot.val(); // get the data as an object
+
+    // Loop through the users and find the closest upcoming birthday
+    for (var key in users) {
+      var user = users[key]; // get the user data
+
+      // Calculate the number of days until the user's next birthday
+      var birthdate = new Date(user.birthdate);
+      var now = new Date();
+      var thisYearBirthday = new Date(now.getFullYear(), birthdate.getMonth(), birthdate.getDate());
+      if (thisYearBirthday < now) {
+        // If the user's birthday has already passed this year, calculate for next year
+        thisYearBirthday.setFullYear(thisYearBirthday.getFullYear() + 1);
+      }
+      var daysUntilBirthday = Math.round((thisYearBirthday - now) / (1000 * 60 * 60 * 24));
+
+      // Check if this is the closest upcoming birthday found so far
+      if (closestBirthday === null || daysUntilBirthday < closestBirthday) {
+        closestBirthday = daysUntilBirthday;
+        closestBirthdayName = user.name;
+      }
+    }
+
+    // Convert the current time to IST timezone
+    var now = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
+    now = new Date(now);
+
+    // Calculate the time until the closest upcoming birthday
+    var birthday = new Date(thisYearBirthday);
+    birthday.setHours(0, 0, 0, 0);
+    var timeUntilBirthday = birthday - now;
+
+    // Display the closest upcoming birthday and the time until it
+    var closestBirthdayText = closestBirthdayName + "'s birthday is the closest, which is in " + closestBirthday + " days, ";
+    closestBirthdayText += Math.floor(timeUntilBirthday / (1000 * 60 * 60)) + " hours, ";
+    closestBirthdayText += Math.floor((timeUntilBirthday % (1000 * 60 * 60)) / (1000 * 60)) + " minutes, and ";
+    closestBirthdayText += Math.floor((timeUntilBirthday % (1000 * 60)) / 1000) + " seconds.";
+
+    document.getElementById('closest-birthday').textContent = closestBirthdayText;
+
+    // Update the countdown every second
+    setInterval(function() {
+      var now = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
+      now = new Date(now);
+      var timeUntilBirthday = birthday - now;
+      closestBirthdayText = closestBirthdayName + "'s birthday is the closest which is in " + closestBirthday + " days, ";
+      closestBirthdayText += Math.floor(timeUntilBirthday / (1000 * 60 * 60)) + " hours, ";
+      closestBirthdayText += Math.floor((timeUntilBirthday % (1000 * 60 * 60)) / (1000 * 60)) + " minutes, and ";
+      closestBirthdayText += Math.floor((timeUntilBirthday % (1000 * 60)) / 1000) + " seconds.";
+      document.getElementById('closest-birthday').textContent = closestBirthdayText;
+    }, 1000);
+  });
+}
+
+
+var closestBirthday = showClosestBirthday();
+// Display the closest birthday and days left
+showClosestBirthday();
+
+closestBirthdayElement.textContent = closestBirthday.name + "'s birthday is coming up on " + closestBirthday.dateString + ". Only " + closestBirthday.daysLeft + " days left!";
