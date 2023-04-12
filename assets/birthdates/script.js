@@ -73,13 +73,13 @@ usersRef.on('value', function(snapshot) {
   }
 });
   
-  if (window.history.replaceState) {
-    // Get the current URL path
-    var path = window.location.pathname;
+  // if (window.history.replaceState) {
+  //   // Get the current URL path
+  //   var path = window.location.pathname;
     
-    // Replace the current URL with the desired URL
-    window.history.replaceState({}, '', path.replace('/assets/birthdates/index.html', '/birthdates'));
-  }
+  //   // Replace the current URL with the desired URL
+  //   window.history.replaceState({}, '', path.replace('/assets/birthdates/index.html', '/birthdates'));
+  // }
   const searchInput = document.getElementById('search-input');
 
 searchInput.addEventListener('input', function() {
@@ -156,4 +156,3 @@ var closestBirthday = showClosestBirthday();
 // Display the closest birthday and days left
 showClosestBirthday();
 
-closestBirthdayElement.textContent = closestBirthday.name + "'s birthday is coming up on " + closestBirthday.dateString + ". Only " + closestBirthday.daysLeft + " days left!";
