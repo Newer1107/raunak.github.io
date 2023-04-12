@@ -73,13 +73,13 @@ usersRef.on('value', function(snapshot) {
   }
 });
   
-  if (window.history.replaceState) {
-    // Get the current URL path
-    var path = window.location.pathname;
+  // if (window.history.replaceState) {
+  //   // Get the current URL path
+  //   var path = window.location.pathname;
     
-    // Replace the current URL with the desired URL
-    window.history.replaceState({}, '', path.replace('/assets/birthdates/index.html', '/birthdates'));
-  }
+  //   // Replace the current URL with the desired URL
+  //   window.history.replaceState({}, '', path.replace('/assets/birthdates/index.html', '/birthdates'));
+  // }
   const searchInput = document.getElementById('search-input');
 
 searchInput.addEventListener('input', function() {
@@ -130,14 +130,12 @@ function showClosestBirthday() {
 
     // Calculate the time until the closest upcoming birthday
     var birthday = new Date(thisYearBirthday);
-    birthday.setHours(0, 0, 0, 0);
+    
     var timeUntilBirthday = birthday - now;
 
     // Display the closest upcoming birthday and the time until it
-    var closestBirthdayText = closestBirthdayName + "'s birthday is the closest, which is in " + closestBirthday + " days, ";
-    closestBirthdayText += Math.floor(timeUntilBirthday / (1000 * 60 * 60)) + " hours, ";
-    closestBirthdayText += Math.floor((timeUntilBirthday % (1000 * 60 * 60)) / (1000 * 60)) + " minutes, and ";
-    closestBirthdayText += Math.floor((timeUntilBirthday % (1000 * 60)) / 1000) + " seconds.";
+    var closestBirthdayText = closestBirthdayName + "'s birthday is the closest, which is in " + closestBirthday + " days! ";
+
 
     document.getElementById('closest-birthday').textContent = closestBirthdayText;
 
@@ -146,10 +144,8 @@ function showClosestBirthday() {
       var now = new Date().toLocaleString("en-US", {timeZone: "Asia/Kolkata"});
       now = new Date(now);
       var timeUntilBirthday = birthday - now;
-      closestBirthdayText = closestBirthdayName + "'s birthday is the closest, which is in " + closestBirthday + " days, ";
-      closestBirthdayText += Math.floor(timeUntilBirthday / (1000 * 60 * 60)) + " hours, ";
-      closestBirthdayText += Math.floor((timeUntilBirthday % (1000 * 60 * 60)) / (1000 * 60)) + " minutes, and ";
-      closestBirthdayText += Math.floor((timeUntilBirthday % (1000 * 60)) / 1000) + " seconds!";
+      closestBirthdayText = closestBirthdayName + "'s birthday is the closest, which is in " + closestBirthday + " days!";
+
       document.getElementById('closest-birthday').textContent = closestBirthdayText;
     }, 1000);
   });
