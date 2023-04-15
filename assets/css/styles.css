@@ -540,3 +540,57 @@ img {
     width: 450px;
   }
 }
+
+.flashcard {
+  position: fixed;
+  bottom: 20px;
+  left: -450px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  z-index: 9999;
+  transition: all 0.5s ease-in-out;
+  max-width: 450px;
+}
+
+.flashcard.open {
+  left: 20px;
+}
+
+.flashcard .content {
+  margin-bottom: 10px;
+}
+
+.flashcard h3 {
+  font-size: 1.2rem;
+  margin-top: 0;
+}
+
+.flashcard a {
+  display: inline-block;
+  background-color: #008080;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  float: right;
+}
+
+.flashcard a:hover {
+  background-color: #005252;
+}
+
+.close-button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border: none;
+  background-color: transparent;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  transform: rotate(90deg);
+}

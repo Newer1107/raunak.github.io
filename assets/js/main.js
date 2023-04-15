@@ -66,3 +66,18 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }
+
+const flashcard = document.querySelector('.flashcard');
+const closeButton = document.querySelector('.close-button');
+
+closeButton.addEventListener('click', () => {
+  flashcard.classList.remove('open');
+  setTimeout(() => {
+    flashcard.style.display = 'none';
+  }, 1000);
+});
+
+setTimeout(() => {
+  flashcard.classList.add('open');
+}, 5000);
+
