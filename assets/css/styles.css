@@ -594,3 +594,26 @@ img {
 .close-button:hover {
   transform: rotate(90deg);
 }
+@media only screen and (max-width: 768px) {
+  .flashcard {
+    left: -200px;
+    max-width: 200px;
+    padding: 10px;
+  }
+  
+  .flashcard.open {
+    left: 0;
+  }
+  
+  .flashcard h3 {
+    font-size: 1rem;
+  }
+  
+  .flashcard a {
+    padding: 8px 16px;
+  }
+  
+  .close-button {
+    font-size: 1.2rem;
+  }
+}
