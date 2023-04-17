@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href="data:image/x-icon;base64,AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAoNLrAHR78gBglNsA////AEBIbgDW1tYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVVAAAABVVVVVVVAABTMzMzMzNQAFEiESIRIlAAUzMzMzMzUABTMzMzMzNQAFVVVVVVVVAAVERGZkRmUAAFZGZVVWZQAABVZSIiVQAAAABVQiJQAAACAABUJQAAACIgAAVQAAAAICAAAAAAAAAAAAAAAAAAD//wAA//8AAMAHAACAAwAAgAMAAIADAACAAwAAgAMAAIADAADAAwAA4AcAAPgPAADeHwAAjz8AAK//AAD//wAA" rel="icon" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/birthdates/styles.css">
+  <title>Birthdates</title>
+<style>
+
+</style>
+
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-database.js"></script>
+
+
+</head>
+<body>
+  
+
+  <p style="text-align: center; text-decoration: underline;" id="closest-birthday"></p>
+  <h1>BirthDates</h1>
+  <form onsubmit="handleSubmit(event)">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required placeholder="Enter your Name:"><br>
+
+    <label for="birthdate">Birthdate:</label>
+    <input type="date" id="birthdate" name="birthdate" required min="1924-01-01" max="2023-01-01"><br>
+
+    <button type="submit">Submit</button>
+    <label for="search-input" class="search-label">Search:</label>
+        <input type="text" id="search-input" class="search-input" style="width: 100%;" placeholder="Search for Names:">
+        
+    <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Birthday <i>[dd/mm/yyyy]</i></th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+      
+  </form>
+  
+  <button onclick="window.location.href='https://aboutraunak.tk'" class="button-end">Go to Home</button>
+
+  <p style="text-align: center;"><i>This is a new project so you might notice bugs and poor graphical interface, feel free to contribute to this project through <a href="https://github.com/Newer1107/raunak.github.io">github</a>!</i></p>
+  
+  <script src="/birthdates/script.js"></script>
+</body>
+</html>

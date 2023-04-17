@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-size: cover;
+}
+
+header {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+}
+
+nav ul li a:hover {
+  background-color: white;
+  color: #333;
+  border-radius: 5px;
+}
+
+#container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  margin-top: 50px; /* add margin-top to give some space between header and container */
+}
+
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+#options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.option {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  font-size: 36px;
+  height: 100px;
+  margin: 10px;
+  padding: 0;
+  width: 45%;
+  transition: background-color 0.3s ease;
+}
+
+.option:hover {
+  background-color: #fff;
+  color: #333;
+  border: 2px solid #333;
+}
+@media (max-width: 768px) {
+  #container {
+    max-width: 90%;
+    margin-top: 20px;
+  }
+  
+  h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  #options {
+    flex-direction: column;
+  }
+  
+  .option {
+    height: 80px;
+    margin: 5px;
+    width: 100%;
+  }
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+thead {
+  background-color: #f2f2f2;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 8px;
+  border: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+@media (max-width: 768px) {
+  table {
+    max-width: 90%;
+  }
+}
