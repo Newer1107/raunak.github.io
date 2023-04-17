@@ -61,5 +61,5 @@ if (window.history.replaceState) {
   var path = window.location.pathname;
   
   // Replace the current URL with the desired URL
-  window.history.replaceState({}, '', path.replace('/assets/cps-tracker/index.html', '/cps-tracker'));
+  window.history.replaceState({}, '', path.replace('/cps-tracker/index.html', '/cps-tracker'));
 }
