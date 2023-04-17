@@ -123,7 +123,7 @@ function generateQuestion() {
       setTimeout(setNextQuestion, 1);
     } else {
       // Prompt user for name and store score in Firebase
-      var name = prompt("Please enter your name:");
+      var name = prompt("Oh no! the answer was incorrect! do you want to save your score which is " + score + " to our database list? if yes, please enter your name below." );
       if (name != null && name.trim() != "") {
         var database = firebase.database();
         database.ref('scores').push({
