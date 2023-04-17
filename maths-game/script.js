@@ -171,3 +171,10 @@ function generateQuestion() {
   
   // Call function to start game
   startGame();
+  if (window.history.replaceState) {
+    // Get the current URL path
+    var path = window.location.pathname;
+    
+    // Replace the current URL with the desired URL
+    window.history.replaceState({}, '', path.replace('/math-game/index.html', '/math-game'));
+  }
