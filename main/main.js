@@ -81,8 +81,3 @@ setTimeout(() => {
   flashcard.classList.add('open');
 }, 5000);
 
-window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-X37YW5DSJV');
