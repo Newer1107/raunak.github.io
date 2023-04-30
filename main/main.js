@@ -82,7 +82,7 @@ setTimeout(() => {
 }, 5000);
 
 var typed = new Typed('.auto-type', {
-  strings: ['a Web Developer', 'a UI/UX designer', 'an IT professional', 'an Innovative dev', 'Service desk analyst', 'a Game-Server Dev'],
+  strings: ['a Web Developer', 'a UI/UX designer', 'an IT professional', 'an Innovative dev'],
   typeSpeed: 75,
   backSpeed: 35,
   loop: true,
