@@ -81,3 +81,9 @@ setTimeout(() => {
   flashcard.classList.add('open');
 }, 5000);
 
+var typed = new Typed('.auto-type', {
+  strings: ['a Game-Server Dev', 'a Web Developer', 'a UI/UX designer', 'an IT professional', 'a Coding enthusiast', 'an Innovative dev', 'a Tech support specialist'],
+  typeSpeed: 75,
+  backSpeed: 35,
+  loop: true,
+});
