@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Passero+One&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Recursive:wght@300..1000&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --font-main:"Quantico", sans-serif;
+    --font-p:"Recursive", sans-serif;
+    --font-title: "Kanit", sans-serif;
+    --main-color:#5a71c5;
+    --button-color:#6c85e0;
+    --button-hover:#4365d5;
+    --footer:#2143c0;
+}
+::selection{
+    background-color: rgba(0, 0, 0, 0.718);
+    color: white;
+}
+body{
+    background: rgb(168, 166, 166) ;
+}
+
+
+p{
+    font-family: var(--font-p);
+    text-transform: capitalize;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+h2 {
+    text-align: center;
+    font-family: var(--font-title);
+    font-size: 35px;
+    text-transform: capitalize;
+    color: #333;
+    letter-spacing: 2px;
+}
+
+.container {
+    margin: 50px 40px;
+    padding: 0 50px;
+    background-color: #f3f3f3e1;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header .header-text {
+    text-align: center;
+    padding: 20px 0 35px;
+}
+.header .header-text h1 {
+    font-size: 50px;
+    font-family: var(--font-main);
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.header .header-text p {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.header .overview h2{
+    font-size: 30px;
+    font-family: var(--font-title);
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+}
+.header .overview p{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.header{
+    margin-bottom: 40px;
+}
+
+
+.installation-steps {
+    background-color: #daddf6;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.installation-steps .steps h3{
+    font-size: 30px;
+    text-transform: capitalize;
+    font-family: var(--font-title);
+    letter-spacing: 1px;
+    font-style: italic;
+}
+.installation-steps .steps p{
+    font-size: 20px;
+    text-transform: capitalize;
+    font-family: var(--font-p);
+    letter-spacing: 1px;
+}
+
+.installation-steps .steps pre{
+    padding: 12px 0 5px;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.copy-button {
+    font-size: 15px;
+    text-transform: capitalize;
+    background-color: var(--button-color);
+    color: #fff;
+    margin: 15px 0 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.copy-button:hover {
+    background-color: var(--button-hover);
+}
+
+.installation-steps ol {
+    font-size: 20px;
+    font-family: var(--font-p);
+    font-weight: 600;
+    padding: 25px 0;
+    margin-left: 20px;
+    letter-spacing: 1px;
+}
+.installation-steps ol li{
+    padding: 10px 0;
+}
+
+.installation-steps .step-eight p , .installation-steps .step-ten p{
+    padding: 10px 0;
+}
+
+.installation-steps .step{
+    margin: 20px 0;
+}
+
+.images{
+    margin: 25px 0;
+}
+.images h2{
+    padding-bottom: 25px;
+    font-size: 50px;
+    text-transform: uppercase;
+}
+
+.images img{
+    max-width: 600px;
+    transform: scale(0.9);
+    object-fit: contain;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);   
+    transition: transform 0.5s ease-in-out;
+}
+.images img:hover{
+    transform: scale(1);
+}
+
+.images .img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px 0;
+    background-color: #2143c0;
+    color: #fff;
+    border-radius: 0 0 10px 10px;
+}

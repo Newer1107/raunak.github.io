@@ -4,235 +4,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Discord Shell Bot Landing Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-            color: #333;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 0 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            color: #7289da;
-        }
-
-        p {
-            color: #666;
-        }
-
-        section {
-            margin-bottom: 40px;
-        }
-
-        .installation-steps {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 5px;
-        }
-
-        .installation-steps h2 {
-            color: #333;
-        }
-
-        .installation-steps ol {
-            margin-left: 20px;
-        }
-
-        .copy-button {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 20px;
-            background-color: #7289da;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .copy-button:hover {
-            background-color: #5f73b6;
-        }
-
-            .visuals-container {
-                display: flex !important;
-                flex-wrap: wrap !important;
-                justify-content: space-between !important;
-                margin-top: 20px !important;
-            }
-
-            .visuals-container img {
-                max-width: 100% !important;
-                height: auto !important;
-                margin-bottom: 20px !important;
-                border-radius: 5px !important;
-                box-shadow: 0 0 5px rgba(0, 0, 0, 0.1) !important;
-            }
-
-        .footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px 0;
-            background-color: #7289da;
-            color: #fff;
-            border-radius: 0 0 10px 10px;
-        }
-    </style>
 </head>
 
 <body>
+    <main>
     <div class="container">
-        <header>
-            <h1>Discord Shell Bot</h1>
-            <p>Execute commands and interact with the shell in Discord</p>
-        </header>
 
-        <section>
-            <h2>Overview</h2>
-            <p>This project implements a Discord bot using Python and the `discord.py` library. The bot acts as a command execution and shell interaction tool within a designated Discord text channel. Users can execute commands, navigate the file system, and receive command output directly in the Discord channel.</p>
+        <section class="header">
+            <div class="header-text">
+                <h1>Discord Shell Bot</h1>
+                <p>Execute commands and interact with the shell in Discord</p>
+            </div>
+
+            <div class="overview">
+                <h2>Overview</h2>
+                <p>This project implements a Discord bot using Python and the `discord.py` library. The bot acts as a command execution and shell interaction tool within a designated Discord text channel. Users can execute commands, navigate the file system, and receive command output directly in the Discord channel.</p>
+            </div>
         </section>
 
-        <section class="installation-steps">
-            <h2>Installation and Usage (For Linux)</h2>
-            <ol>
-                <li>
-                    <h3>Step 1: Clone the repository</h3>
-                    <p>Open your terminal and navigate to the directory where you want to clone the repository.</p>
-                    <pre><code>git clone https://github.com/Newer1107/termtodiscord</code></pre>
-                    <button class="copy-button" onclick="copyToClipboard()">Copy git clone command</button>
-                </li>
-                <li>
-                    <h3>Step 2: Set up the environment</h3>
-                    <p>Navigate to the cloned repository:</p>
-                    <pre><code>cd termtodiscord</code></pre>
-                    <p>Create a new virtual environment:</p>
-                    <pre><code>python -m venv .</code></pre>
-                </li>
-                <li>
-                    <h3>Step 3: Activate the virtual environment</h3>
-                    <p>Activate the virtual environment by running the following command:</p>
-                    <pre><code>source bin/activate</code></pre>
-                </li>
-                <li>
-                    <h3>Step 4: Install dependencies</h3>
-                    <p>Install the required dependencies by running the following command:</p>
-                    <pre><code>pip install -r requirements.txt</code></pre>
-                </li>
-                <li>
-                    <h3>Step 5: Configure the bot</h3>
-                    <p>Rename the <code>.env.example</code> file to <code>.env</code>:</p>
-                    <pre><code>mv .env.example .env</code></pre>
-                    <p>Open the <code>.env</code> file and update the following lines:</p>
-                    <pre><code>
-BOT_TOKEN=&lt;your bot token&gt;
-OWNER_ID=&lt;your Discord ID&gt;
-CHANNEL_ID=&lt;your channel ID&gt;
-LOG_FILE_LOCATION=&lt;path to the log file&gt;
-                    </code></pre>
-                    <p>Replace <code>&lt;your bot token&gt;</code> with the token of your Discord bot, <code>&lt;your Discord ID&gt;</code> with your own Discord ID, <code>&lt;your channel ID&gt;</code> with the ID of the Discord channel where you want the bot to operate, and <code>&lt;path to the log file&gt;</code> with the desired location for the log file.</p>
-                </li>
-                <li>
-                    <h3>Step 6: Customize the starting directory (optional)</h3>
-                    <p>If you want to change the starting directory for the bot's file system navigation, modify the <code>current_directory</code> variable in the code to the desired directory path.</p>
-                </li>
-                <li>
-                    <h3>Step 7: Add an optional thumbnail image (optional)</h3>
-                    <p>You have the option to add a thumbnail image to the embedded system information message. To do this, follow the steps below:</p>
-                    <ol>
-                        <li>Prepare an image file (e.g., <code>arch.png</code>) that you want to use as the thumbnail.</li>
-                        <li>Copy the image file to the <code>termtodiscord</code> directory.</li>
-                        <li>Open <code>bot.py</code> in a text editor.</li>
-                        <li>Find the line <code>arch_logo = File("ADD-IMAGE-PATH-HERE")</code>.</li>
-                        <li>Replace <code>"ADD-IMAGE-PATH-HERE"</code> with the actual path to the image file. For example: <code>arch_logo = File("arch.png")</code>.</li>
-                    </ol>
-                </li>
-                <li>
-                    <h3>Step 8: Setting up the bot</h3>
-                    <p>Visit the <a href="https://discord.com/developers/applications">Discord Developer Portal</a>.</p>
-                    <p>Click on the "New Application" button.</p>
-                    <p>Enter a name for your application (this will be the name of your bot).</p>
-                    <p>Click the "Create" button.</p>
-                    <p>In the application dashboard, navigate to the "Bot" tab on the left sidebar.</p>
-                    <p>Click on the "Add Bot" button.</p>
-                    <p>A confirmation prompt will appear. Click "Yes, do it!" to proceed.</p>
-                    <p>Customize your bot's display name and profile picture by adjusting the "Username" and "Avatar" settings under the "Bot" tab.</p>
-                    <p>Toggle the "Public Bot" switch if you want your bot to be available publicly.</p>
-                    <p>Enable the necessary bot permissions under the "Bot Permissions" section. These permissions define what your bot can do on Discord servers.</p>
-                    <p>Scroll down and click the "Save Changes" button.</p>
-                    <p>Under the "Token" section, click the "Copy" button to copy the bot token. This token is a secret key that identifies your bot to Discord.</p>
-                    <p><strong>Important:</strong> Treat the bot token as sensitive information and keep it private. Do not share it publicly or include it in your code repository.</p>
-                    <p>Navigate to the "OAuth2" tab on the left sidebar.</p>
-                    <p>In the "Scopes" section, select the necessary bot permissions based on your bot's functionality.</p>
-                    <p>Copy the generated OAuth2 URL.</p>
-                    <p>Open a new browser tab and paste the URL.</p>
-                    <p>Choose the server where you want to invite the bot and follow the prompts to complete the invitation process.</p>
-                </li>
-                <li>
-                    <h3>Step 9: Run the bot</h3>
-                    <p>Start the bot by running the following command:</p>
-                    <pre><code>python bot.py</code></pre>
-                </li>
-                <li>
-                    <h3>Step 10: Interact with the bot</h3>
-                    <p>In the designated text channel (specified by <code>CHANNEL_ID</code> in the <code>.env</code> file), type commands to interact with the bot.</p>
-                    <p>Use the <code>ping</code> command to check if the bot is responding. Example: <code>!ping</code></p>
-                    <p>Use the <code>hello</code> command to receive a greeting from the bot. Example: <code>!hello</code></p>
-                    <p>Execute shell commands directly by typing them in the channel. Only the bot owner, specified by <code>OWNER_ID</code> in the <code>.env</code> file, can execute console commands.</p>
-                    <p>The bot will execute the command, capture the output, and display it in a formatted message.</p>
-                    <p>Use the <code>cd</code> command followed by a directory path to navigate the file system. Example: <code>cd /home/user/Downloads</code></p>
-                </li>
-            </ol>
-   
-        </section>
+        <div class="main-content">
+            <section class="installation-steps">
+                <h2>Installation and Usage (For Linux)</h2>
 
-        <section>
-            <h2>Visuals</h2>
-            <div class="visuals-container">
-            <img src="visuals-1.png" alt="Discord Shell Bot Screenshot">
-            <img src="visuals-2.png" alt="Discord Shell Bot Screenshot">
-            <img src="visuals-3.png" alt="Discord Shell Bot Screenshot">
-            <img src="visuals-4.png" alt="Discord Shell Bot Screenshot">
-            <img src="visuals-5.png" alt="Discord Shell Bot Screenshot">
+                <!-- Step-one -->
+                <div class="steps step">
+                    <div class="step-one">
+                        <h3>Step 1 : Clone the repository</h3>
+                        <p>Open your terminal and navigate to the directory where you want to clone the repository.</p>
+                        <pre><code>git clone https://github.com/Newer1107/termtodiscord</code></pre>
+                        <button class="copy-button" onclick="copyToClipboard()">Copy git clone command</button>
+                    </div>
+
+                <!-- Step-Two -->
+                    <div class="step-two step">
+                        <h3>Step 2: Set up the environment</h3>
+                        <p>Navigate to the cloned repository:</p>
+                        <pre><code>cd termtodiscord</code></pre>
+                        <p>Create a new virtual environment:</p>
+                        <pre><code>python -m venv .</code></pre>
+                    </div>
+
+                    <!-- Step-Three -->
+                    <div class="step-three step">
+                        <h3>Step 3: Activate the virtual environment</h3>
+                        <p>Activate the virtual environment by running the following command:</p>
+                        <pre><code>source bin/activate</code></pre>
+                    </div>
+
+                    <!-- Step-Four -->
+                    <div class="step-four step">
+                        <h3>Step 4: Install dependencies</h3>
+                        <p>Install the required dependencies by running the following command:</p>
+                        <pre><code>pip install -r requirements.txt</code></pre>
+                    </div>
+
+                    <!-- Step-five -->
+                    <div class="step-five step">
+                        <h3>Step 5: Configure the bot</h3>
+                        <p>Rename the <code>.env.example</code> file to <code>.env</code>:</p>
+                        <pre><code>mv .env.example .env</code></pre>
+                        <p>Open the <code>.env</code> file and update the following lines:</p>
+
+                        <pre><code>
+        BOT_TOKEN=&lt;your bot token&gt;
+        OWNER_ID=&lt;your Discord ID&gt;
+        CHANNEL_ID=&lt;your channel ID&gt;
+        LOG_FILE_LOCATION=&lt;path to the log file&gt;
+                        </code></pre>
+
+                        <p>Replace <code>&lt;your bot token&gt;</code> with the token of your Discord bot, <code>&lt;your Discord ID&gt;</code> with your own Discord ID, <code>&lt;your channel ID&gt;</code> with the ID of the Discord channel where you want the bot to operate, and <code>&lt;path to the log file&gt;</code> with the desired location for the log file.</p>
+                    </div>
+
+                    <!-- Step-Six -->
+                    <div class="step-six step">
+                        <h3>Step 6: Customize the starting directory (optional)</h3>
+                        <p>If you want to change the starting directory for the bot's file system navigation, modify the <code>current_directory</code> variable in the code to the desired directory path.</p>
+                    </div>
+
+                    <!-- Step-Seven -->
+                    <div class="step-seven step">
+                        <h3>Step 7: Add an optional thumbnail image (optional)</h3>
+                        <p>You have the option to add a thumbnail image to the embedded system information message. To do this, follow the steps below:</p>
+                        <ol>
+                            <li>Prepare an image file (e.g., <code>arch.png</code>) that you want to use as the thumbnail.</li>
+                            <li>Copy the image file to the <code>termtodiscord</code> directory.</li>
+                            <li>Open <code>bot.py</code> in a text editor.</li>
+                            <li>Find the line <code>arch_logo = File("ADD-IMAGE-PATH-HERE")</code>.</li>
+                            <li>Replace <code>"ADD-IMAGE-PATH-HERE"</code> with the actual path to the image file. For example: <code>arch_logo = File("arch.png")</code>.</li>
+                        </ol>
+                    </div>
+
+                    <!-- Step-Eight -->
+                    <div class="step-eight step">
+                        <h3>Step 8: Setting up the bot</h3>
+                        <p>1. Visit the <a href="https://discord.com/developers/applications">Discord Developer Portal</a>.</p>
+                        <p>2. Click on the "New Application" button.</p>
+                        <p>3. Enter a name for your application (this will be the name of your bot).</p>
+                        <p>4. Click the "Create" button.</p>
+                        <p>5. In the application dashboard, navigate to the "Bot" tab on the left sidebar.</p>
+                        <p>6. Click on the "Add Bot" button.</p>
+                        <p>7. A confirmation prompt will appear. Click "Yes, do it!" to proceed.</p>
+                        <p>8. Customize your bot's display name and profile picture by adjusting the "Username" and "Avatar" settings under the "Bot" tab.</p>
+                        <p>9. Toggle the "Public Bot" switch if you want your bot to be available publicly.</p>
+                        <p>10.Enable the necessary bot permissions under the "Bot Permissions" section. These permissions define what your bot can do on Discord servers.</p>
+                        <p>11.Scroll down and click the "Save Changes" button.</p>
+                        <p>12.Under the "Token" section, click the "Copy" button to copy the bot token. This token is a secret key that identifies your bot to Discord.</p>
+                        <p><strong>Important:</strong> Treat the bot token as sensitive information and keep it private. Do not share it publicly or include it in your code repository.</p>
+                        <p>13.Navigate to the "OAuth2" tab on the left sidebar.</p>
+                        <p>14.In the "Scopes" section, select the necessary bot permissions based on your bot's functionality.</p>
+                        <p>15.Copy the generated OAuth2 URL.</p>
+                        <p>16.Open a new browser tab and paste the URL.</p>
+                        <p>17.Choose the server where you want to invite the bot and follow the prompts to complete the invitation process.</p>
+                    </div>
+
+                    <!-- Step-Nine -->
+                    <div class="step-nine step">
+                        <h3>Step 9: Run the bot</h3>
+                        <p>Start the bot by running the following command:</p>
+                        <pre><code>python bot.py</code></pre>
+                    </div>
+
+                    <!-- Step-Ten -->
+                    <div class="step-ten step">
+                        <h3>Step 10: Interact with the bot</h3>
+                        <p>1. In the designated text channel (specified by <code>CHANNEL_ID</code> in the <code>.env</code> file), type commands to interact with the bot.</p>
+                        <p>2. Use the <code>ping</code> command to check if the bot is responding. Example: <code>!ping</code></p>
+                        <p>3. Use the <code>hello</code> command to receive a greeting from the bot. Example: <code>!hello</code></p>
+                        <p>4. Execute shell commands directly by typing them in the channel. Only the bot owner, specified by <code>OWNER_ID</code> in the <code>.env</code> file, can execute console commands.</p>
+                        <p>5. The bot will execute the command, capture the output, and display it in a formatted message.</p>
+                        <p>6. Use the <code>cd</code> command followed by a directory path to navigate the file system. Example: <code>cd /home/user/Downloads</code></p>
+                    </div>
+                </div>
+            </section>
         </div>
-        </section>
 
-        <section>
-            <h2>Customization Options</h2>
-            <p>If you want to customize the bot, follow the instructions provided in the documentation.</p>
-        </section>
-
-        <section>
-            <h2>Bot Setup</h2>
-            <p>Set up your Discord bot by following the steps outlined in the documentation.</p>
-        </section>
-
-        <section>
-            <h2>Interacting with the Bot</h2>
-            <p>Once the bot is set up, interact with it using the specified commands in your designated Discord channel.</p>
-        </section>
-
-        <section>
-            <h2>Additional Information</h2>
-            <p>For more information and updates, visit <a href="https://github.com/Newer1107/termtodiscord">GitHub repository</a>.</p>
-        </section>
+            <div class="images">
+                <h2>Visuals</h2>
+                <div class="img-container">
+                    <img src="visuals-1.png" alt="Discord Shell Bot Screenshot">
+                    <img src="visuals-2.png" alt="Discord Shell Bot Screenshot">
+                    <img src="visuals-3.png" alt="Discord Shell Bot Screenshot">
+                    <img src="visuals-4.png" alt="Discord Shell Bot Screenshot">
+                    <img src="visuals-5.png" alt="Discord Shell Bot Screenshot">
+                </div>
+            </div>
+    
+            <section>
+                <h2>Customization Options</h2>
+                <p>If you want to customize the bot, follow the instructions provided in the documentation.</p>
+            </section>
+    
+            <section>
+                <h2>Bot Setup</h2>
+                <p>Set up your Discord bot by following the steps outlined in the documentation.</p>
+            </section>
+    
+            <section>
+                <h2>Interacting with the Bot</h2>
+                <p>Once the bot is set up, interact with it using the specified commands in your designated Discord channel.</p>
+            </section>
+    
+            <section>
+                <h2>Additional Information</h2>
+                <p>For more information and updates, visit <a href="https://github.com/Newer1107/termtodiscord">GitHub repository</a>.</p>
+            </section>
+        
     </div>
+    </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <p>For more information, visit <a href="https://github.com/Newer1107/termtodiscord">GitHub</a></p>
     </footer>
