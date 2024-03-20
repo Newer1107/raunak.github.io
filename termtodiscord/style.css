@@ -14,7 +14,8 @@
     --main-color:#5a71c5;
     --button-color:#6c85e0;
     --button-hover:#4365d5;
-    --footer:#2143c0;
+    --footer:#0066ccb5;
+    --a:rgb(20, 20, 192);
 }
 ::selection{
     background-color: rgba(0, 0, 0, 0.718);
@@ -154,8 +155,16 @@ h2 {
     text-transform: uppercase;
 }
 
+.images .img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
 .images img{
-    max-width: 600px;
+    max-width: 100%;
+    height: auto;
     transform: scale(0.9);
     object-fit: contain;
     border-radius: 5px;
@@ -166,19 +175,86 @@ h2 {
     transform: scale(1);
 }
 
-.images .img-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+
+
+.bot-sections{
+    padding: 40px 0;
+}
+.bot-sections div{
+    padding: 22px 0;
+}
+.bot-sections p{
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    padding-top: 20px;
+}
+
+a{
+    color: var(--a);
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
 }
 
 .footer {
-    text-align: center;
-    margin-top: 50px;
-    padding: 20px 0;
-    background-color: #2143c0;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    background-color: var(--footer);
     color: #fff;
-    border-radius: 0 0 10px 10px;
+    border-radius: 10px 10px 0 0;
+}
+.footer a{
+    color: black;
+}
+
+/* Media Quare */
+@media(max-width:880px){
+    .container {
+        margin: 0;
+        padding: 0;
+    }
+    .overview{
+        padding: 0 20px;
+    }
+}
+
+@media(max-width:680px){
+    .header .header-text {
+        padding: 20px 0 20px;
+    }
+    .header .header-text h1 {
+        font-size: 34px;
+    }
+    
+    .header .header-text p {
+        font-size: 15px;
+    }
+
+    .header .overview p{
+        font-size: 18px;
+        text-align: center;
+    }
+    
+    h2 {
+        font-size: 30px;
+    }
+    
+    .installation-steps .steps h3{
+        font-size: 25px;
+        font-style: normal;
+    } 
+    .installation-steps .steps pre{
+        font-size: 15px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    .footer {
+        font-size: 15px;
+    }
 }
