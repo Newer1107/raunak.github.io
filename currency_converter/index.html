@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Converter</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
     <div class="converter">
@@ -14,16 +16,24 @@
             <input type="number" id="amount" placeholder="Enter amount">
         </div>
         <div class="input-group">
-            <label for="from-currency">From:</label>
-            <select id="from-currency"></select>
+            <label for="fromCurrency">From:</label>
+            <select id="fromCurrency" class="currency-select">
+                <!-- Options will be added dynamically -->
+            </select>
         </div>
         <div class="input-group">
-            <label for="to-currency">To:</label>
-            <select id="to-currency"></select>
+            <label for="toCurrency">To:</label>
+            <select id="toCurrency" class="currency-select">
+                <!-- Options will be added dynamically -->
+            </select>
         </div>
-        <button id="convert-button">Convert</button>
+        <button onclick="convertCurrency()">Convert</button>
         <div id="result"></div>
+        <div id="loader" class="loader" style="display:none;"></div>
     </div>
+    <!-- Select2 JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
