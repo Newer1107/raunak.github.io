@@ -6,7 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     background: linear-gradient(to right, #74ebd5, #acb6e5);
-    cursor: url('path/to/your/custom-cursor.png'), auto;
+    cursor: url('image.png'), auto;
 }
 
 .converter {
@@ -100,7 +100,7 @@ button:active {
 
 #result {
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 24px;
     font-weight: bold;
     color: #333;
     animation: fadeIn 0.5s ease-in-out;
