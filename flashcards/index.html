@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcard App - A Guided Tour</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-lg shadow-md shadow-black/20">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-teal-400">Flashcard App</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#how-it-works" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">How It Works</a>
+                        <a href="#features" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Features</a>
+                        <a href="#for-developers" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">For Developers</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <section id="hero" class="py-20 text-center">
+            <h2 class="text-5xl font-extrabold tracking-tight text-white sm:text-6xl">
+                Smarter Learning, Simplified.
+            </h2>
+            <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-400">
+                Welcome to the Flashcard App, a powerful tool designed to make learning more efficient and engaging. Create your own flashcards, test your knowledge with AI-powered quizzes, and track your progress.
+            </p>
+            <div class="mt-8">
+                <a href="https://flashcards.raunakcodes.me" class="inline-block bg-teal-500 text-white font-bold text-lg px-8 py-4 rounded-lg hover:bg-teal-600 transition-colors duration-300">
+                    Explore the App &#10140;
+                </a>
+            </div>
+        </section>
+
+        <div class="border-t border-gray-700 my-12"></div>
+
+        <section id="how-it-works" class="py-16">
+            <div class="text-center">
+                <h2 class="text-4xl font-bold tracking-tight text-white">How It Works</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-400">
+                    From signing up to acing your quiz, here’s a step-by-step journey through the app.
+                </p>
+            </div>
+            <div class="mt-16 grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4 text-teal-400">&#128221;</div>
+                    <h3 class="text-2xl font-bold text-white">1. Create & Manage</h3>
+                    <p class="mt-2 text-gray-400">Sign up and start creating your own flashcards. You can add them one by one or import a whole set from a CSV file.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4 text-teal-400">&#129504;</div>
+                    <h3 class="text-2xl font-bold text-white">2. Take a Quiz</h3>
+                    <p class="mt-2 text-gray-400">Test your knowledge with our interactive quiz. Questions are shuffled to keep you on your toes.</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg">
+                    <div class="text-4xl mb-4 text-teal-400">&#128172;</div>
+                    <h3 class="text-2xl font-bold text-white">3. Get AI Feedback</h3>
+                    <p class="mt-2 text-gray-400">After each answer, our AI, powered by Google's Gemini, provides instant feedback, explaining concepts and helping you learn faster.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="border-t border-gray-700 my-12"></div>
+
+        <section id="features" class="py-16">
+            <div class="text-center">
+                <h2 class="text-4xl font-bold tracking-tight text-white">Core Features</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-400">
+                    Everything you need for an effective study session.
+                </p>
+            </div>
+            <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md transition-transform duration-300 feature-card">
+                    <h3 class="text-xl font-bold text-white">User Authentication</h3>
+                    <p class="mt-2 text-gray-400">Secure sign-up and login with email verification to protect your account.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md transition-transform duration-300 feature-card">
+                    <h3 class="text-xl font-bold text-white">Flashcard Management</h3>
+                    <p class="mt-2 text-gray-400">Easily create, edit, and delete flashcards from your personal dashboard.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md transition-transform duration-300 feature-card">
+                    <h3 class="text-xl font-bold text-white">CSV Import</h3>
+                    <p class="mt-2 text-gray-400">Quickly import your existing study materials from a CSV file.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md transition-transform duration-300 feature-card">
+                    <h3 class="text-xl font-bold text-white">AI-Powered Quiz</h3>
+                    <p class="mt-2 text-gray-400">Get intelligent, real-time feedback on your quiz answers from Google's Gemini.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-md transition-transform duration-300 feature-card">
+                    <h3 class="text-xl font-bold text-white">Admin Dashboard</h3>
+                    <p class="mt-2 text-gray-400">A dedicated panel for admins to manage users and their content.</p>
+                </div>
+                 <div class="bg-gray-800 p-6 rounded-lg shadow-md transition-transform duration-300 feature-card">
+                    <h3 class="text-xl font-bold text-white">Secure & Private</h3>
+                    <p class="mt-2 text-gray-400">Your flashcards are your own. We ensure your data is kept private and secure.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="border-t border-gray-700 my-12"></div>
+
+        <section id="for-developers" class="py-16">
+            <div class="text-center">
+                 <h2 class="text-4xl font-bold tracking-tight text-white">For Developers</h2>
+                 <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-400">Interested in the code? Here’s a look under the hood.</p>
+            </div>
+            <div class="mt-16 grid md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Project Structure</h3>
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                        <div class="font-mono text-gray-300 space-y-2">
+                            <p>&#128193; routes/ - Handles application routing.</p>
+                            <p class="ml-4">&#128221; auth.js, flashcards.js, quiz.js, admin.js</p>
+                            <p>&#128193; views/ - EJS templates for the UI.</p>
+                            <p>&#128193; middleware/ - Custom middleware (e.g., isAdmin).</p>
+                            <p>&#128221; server.js - Main Express server.</p>
+                            <p>&#128221; db.js - Database connection.</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">API Endpoint: `POST /quiz/answer`</h3>
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                        <p class="mb-4">This endpoint takes a user's answer, compares it to the correct one, and uses the Gemini API to generate a helpful explanation.</p>
+                        <pre class="bg-gray-900 p-4 rounded-md text-sm overflow-x-auto"><code>
+// Simplified logic from routes/quiz.js
+router.post('/answer', async (req, res) => {
+  const { userAnswer, correctAnswer, question } = req.body;
+  
+  const prompt = `
+    Question: ${question}
+    Correct Answer: ${correctAnswer}
+    User's Answer: ${userAnswer}
+    Explain if the user is correct or not.
+  `;
+
+  // Call to Google Generative AI
+  const aiResponse = await getAiFeedback(prompt);
+
+  res.json({ message: aiResponse });
+});
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 border-t border-gray-700">
+        <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 Flashcard App. A project for smarter learning.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
