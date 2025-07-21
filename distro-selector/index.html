@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Documentation - Linux Distro Selector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 400px;
+        }
+        .file-item:hover .file-description {
+            opacity: 1;
+            visibility: visible;
+        }
+    </style>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-gray-300">
+
+    <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-lg shadow-md shadow-black/20">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-sky-400">Linux Distro Selector Docs</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#overview" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Overview</a>
+                        <a href="#structure" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Structure</a>
+                        <a href="#backend" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Backend</a>
+                        <a href="#frontend" class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Frontend</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        <section id="overview" class="py-16">
+            <div class="text-center">
+                <h2 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">Interactive Project Documentation</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-xl text-gray-400">An explorable guide to the Linux Distro Selector application.</p>
+                <div class="mt-8">
+                    <a href="http://distroselector.raunakcodes.me" target="_blank" class="inline-block bg-sky-500 text-white font-bold text-lg px-8 py-3 rounded-lg hover:bg-sky-600 transition-colors duration-300">
+                        Visit The Live App &#10140;
+                    </a>
+                </div>
+            </div>' '
+            
+            <div class="mt-20 grid gap-8 md:grid-cols-2 lg:grid-cols-2 items-center">
+                <div class="prose prose-lg text-gray-400 max-w-none prose-invert">
+                    <h3>About The Project</h3>
+                    <p>The Linux Distro Selector is a web application designed to help users find suitable Linux distributions based on their specific needs and hardware. Users provide information about their system, preferences, and use case, and the application leverages the Google Generative AI API to provide two tailored recommendations.</p>
+                    <p>This interactive document provides a comprehensive look into the project's architecture, components, and logic, allowing you to explore how it's built and how it works.</p>
+                </div>
+                <div class="mt-10 md:mt-0">
+                     <div class="text-center">
+                        <h3 class="text-2xl font-bold text-gray-100 mb-4">Technology Stack</h3>
+                        <p class="text-gray-400 mb-6">The project uses a blend of backend and frontend technologies. The chart below shows a breakdown of the core components. Hover over a segment for more details.</p>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="techStackChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="border-t border-gray-700"></div>
+
+        <section id="structure" class="py-16">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-white">Project Structure</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-400">The project is organized into a few key files. Hover over each file below to see a brief description of its role in the application. This structure separates the backend logic from the frontend presentation.</p>
+            </div>
+            <div class="mt-12 max-w-md mx-auto bg-gray-800 p-6 rounded-xl shadow-lg">
+                <div class="font-mono text-gray-300 space-y-2">
+                    <div class="flex items-center file-item relative">
+                        <span>&#128193; .</span>
+                        <div class="file-description absolute left-full ml-4 w-64 p-3 bg-gray-900 text-white text-sm rounded-lg shadow-lg opacity-0 invisible transition-opacity duration-300 border border-gray-600">
+                            <strong>Root Directory</strong><br>The main folder containing all project files.
+                        </div>
+                    </div>
+                    <div class="pl-4">
+                        <div class="flex items-center file-item relative">
+                            <span>&#9500;&#9472;&#9472; &#128187; main.py</span>
+                            <div class="file-description absolute left-full ml-4 w-64 p-3 bg-gray-900 text-white text-sm rounded-lg shadow-lg opacity-0 invisible transition-opacity duration-300 border border-gray-600">
+                                <strong>Flask Backend</strong><br>Handles API requests, interacts with the Google AI, and serves the frontend.
+                            </div>
+                        </div>
+                        <div class="flex items-center file-item relative">
+                            <span>&#9500;&#9472;&#9472; &#128441;&#65039; index.html</span>
+                             <div class="file-description absolute left-full ml-4 w-64 p-3 bg-gray-900 text-white text-sm rounded-lg shadow-lg opacity-0 invisible transition-opacity duration-300 border border-gray-600">
+                                <strong>Frontend Interface</strong><br>The single file containing the HTML structure, CSS styling, and client-side JavaScript for the user interface.
+                            </div>
+                        </div>
+                         <div class="flex items-center file-item relative">
+                            <span>&#9492;&#9472;&#9472; &#128220; user_inputs_log.txt</span>
+                             <div class="file-description absolute left-full ml-4 w-64 p-3 bg-gray-900 text-white text-sm rounded-lg shadow-lg opacity-0 invisible transition-opacity duration-300 border border-gray-600">
+                                <strong>Log File</strong><br>A text file where all user submissions are logged for debugging and analysis purposes.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="border-t border-gray-700"></div>
+        
+        <section id="backend" class="py-16">
+            <div class="text-center">
+                 <h2 class="text-3xl font-bold tracking-tight text-white">Backend Logic (`main.py`)</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-400">The backend is built with Python and Flask. Its primary responsibility is to process user requests from the frontend and fetch recommendations from the Google Generative AI. Below, you can explore the API endpoint and see how a request is structured.</p>
+            </div>
+            <div class="mt-12 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-semibold text-center mb-6 text-gray-100">API Endpoint Explorer: `POST /generate`</h3>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-800 p-6 rounded-xl shadow-lg">
+                        <h4 class="text-xl font-bold mb-4 text-white">1. Construct Your Request</h4>
+                        <p class="text-sm text-gray-400 mb-6">Fill out the form below to see how user inputs are translated into a request payload for the backend.</p>
+                        <form id="api-explorer-form" class="space-y-4">
+                            <div>
+                                <label for="exp-option" class="block text-sm font-medium text-gray-300">Preference</label>
+                                <select id="exp-option" class="mt-1 block w-full pl-3 pr-10 py-2 text-base bg-gray-700 border-gray-600 text-white focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm rounded-md">
+                                    <option>Stable, well-managed</option>
+                                    <option>Easy-to-use, traditional desktop</option>
+                                    <option>Frequent updates, can be unstable</option>
+                                </select>
+                            </div>
+                             <div>
+                                <label for="exp-device" class="block text-sm font-medium text-gray-300">Device Type</label>
+                                <select id="exp-device" class="mt-1 block w-full pl-3 pr-10 py-2 text-base bg-gray-700 border-gray-600 text-white focus:outline-none focus:ring-sky-500 focus:border-sky-500 sm:text-sm rounded-md">
+                                    <option>Desktop</option>
+                                    <option>Laptop</option>
+                                    <option>Server</option>
+                                    <option>ARM</option>
+                                    <option>Phone</option>
+                                </select>
+                            </div>
+                             <div>
+                                <label for="exp-ram" class="block text-sm font-medium text-gray-300">System RAM (GB)</label>
+                                <input type="text" id="exp-ram" value="8" class="mt-1 block w-full shadow-sm sm:text-sm bg-gray-700 border-gray-600 text-white rounded-md p-2">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="bg-black/80 text-white p-6 rounded-xl shadow-lg flex flex-col">
+                        <h4 class="text-xl font-bold mb-4 text-gray-100">2. Simulated cURL Request</h4>
+                         <p class="text-sm text-gray-400 mb-6">This is an example of what the frontend sends to the backend API. It updates automatically as you change the form values.</p>
+                        <code id="curl-output" class="text-sm font-mono whitespace-pre-wrap flex-grow bg-gray-900 p-4 rounded-md overflow-x-auto"></code>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="border-t border-gray-700"></div>
+
+        <section id="frontend" class="py-16">
+             <div class="text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-white">Frontend Interface (`index.html`)</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-400">The frontend is a single HTML file that uses Bootstrap for layout, custom CSS for styling, and vanilla JavaScript for interactivity. It captures user input and communicates with the backend via an AJAX request. The diagram below illustrates the entire client-side process.</p>
+            </div>
+            <div class="mt-12">
+                <h3 class="text-2xl font-semibold text-center mb-8 text-gray-100">Client-Side User Flow</h3>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-4 md:gap-2 font-mono text-sm text-center">
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-lg border border-sky-800 w-full md:w-48">
+                        <div class="text-2xl mb-2">&#128100;</div>
+                        <h4 class="font-bold text-white">1. User Interaction</h4>
+                        <p class="text-xs text-gray-400">User selects options and fills in system details.</p>
+                    </div>
+                    <div class="text-2xl text-gray-500 transform rotate-90 md:rotate-0">&rarr;</div>
+                    <div class="bg-gray-800 p-4 rounded-lg shadow-lg border border-sky-800 w-full md:w-48">
+                         <div class="text-2xl mb-2">&#128190;</div>
+                        <h4 class="font-bold text-white">2. Form Submission</h4>
+                        <p class="text-xs text-gray-400">Clicking 'Submit' triggers a JavaScript function.</p>
+                    </div>
+                    <div class="text-2xl text-gray-500 transform rotate-90 md:rotate-0">&rarr;</div>
+                     <div class="bg-gray-800 p-4 rounded-lg shadow-lg border border-sky-800 w-full md:w-48">
+                         <div class="text-2xl mb-2">&#128229;</div>
+                        <h4 class="font-bold text-white">3. AJAX Request</h4>
+                        <p class="text-xs text-gray-400">JS sends a POST request to `/generate` with form data.</p>
+                    </div>
+                     <div class="text-2xl text-gray-500 transform rotate-90 md:rotate-0">&rarr;</div>
+                     <div class="bg-gray-800 p-4 rounded-lg shadow-lg border border-sky-800 w-full md:w-48">
+                         <div class="text-2xl mb-2">&#128172;</div>
+                        <h4 class="font-bold text-white">4. Display Response</h4>
+                        <p class="text-xs text-gray-400">On success, the AI response is parsed and displayed on the page.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 border-t border-gray-700">
+        <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-gray-500 text-sm">
+            <p>&copy; 2024 Interactive Documentation. Created to explore the Linux Distro Selector App.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            
+            // Tech Stack Chart
+            const ctx = document.getElementById('techStackChart').getContext('2d');
+            const techStackChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Flask (Backend)', 'Vanilla JS (Frontend)', 'Google AI API', 'HTML/CSS'],
+                    datasets: [{
+                        label: 'Technology Stack',
+                        data: [30, 30, 25, 15],
+                        backgroundColor: [
+                            '#0ea5e9', // sky-500
+                            '#f59e0b', // amber-500
+                            '#10b981', // emerald-500
+                            '#f43f5e'  // rose-500
+                        ],
+                        borderColor: '#111827', // bg-gray-900
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                             labels: {
+                                color: '#d1d5db', // text-gray-300
+                                font: {
+                                    family: 'Inter',
+                                    size: 12
+                                }
+                            }
+                        },
+                        tooltip: {
+                             bodyColor: '#d1d5db',
+                             titleColor: '#ffffff',
+                             callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    if (label) {
+                                        label += ': ';
+                                    }
+                                    if (context.parsed !== null) {
+                                        label += context.parsed + '%';
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // API Explorer
+            const form = document.getElementById('api-explorer-form');
+            const curlOutput = document.getElementById('curl-output');
+
+            function updateCurlCommand() {
+                const option = document.getElementById('exp-option').value;
+                const device = document.getElementById('exp-device').value;
+                const ram = document.getElementById('exp-ram').value;
+                
+                const data = `option=${encodeURIComponent(option)}&device=${encodeURIComponent(device)}&ram=${encodeURIComponent(ram)}&...`;
+
+                const command = `curl -X POST http://localhost:5000/generate \\
+-H "Content-Type: application/x-www-form-urlencoded" \\
+-d "${data}"`;
+
+                curlOutput.textContent = command;
+            }
+
+            form.addEventListener('input', updateCurlCommand);
+            updateCurlCommand();
+            
+            // Smooth scrolling for nav links
+             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
