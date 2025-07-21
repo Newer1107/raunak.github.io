@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResultSphere - The Ultimate Guide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <div class="relative min-h-screen">
+        <!-- Background Gradient -->
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900 via-gray-900 to-purple-900/50 z-0"></div>
+
+        <main class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            
+            <section id="hero" class="py-24 text-center">
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white">
+                    ResultSphere
+                </h1>
+                <p class="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-gray-300">
+                    A powerful and intuitive Streamlit application that simplifies student data management for educational institutions.
+                </p>
+                <div class="mt-10">
+                    <a href="#" class="inline-block bg-purple-600 text-white font-bold text-lg px-10 py-4 rounded-full hover:bg-purple-700 transition-all duration-300 shadow-lg shadow-purple-500/20">
+                        Launch the App
+                    </a>
+                </div>
+            </section>
+
+            <section id="the-two-worlds" class="py-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold tracking-tight text-white">The Two Worlds of Our App</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
+                        One app, two unique experiences tailored for students and teachers.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-10">
+                    <div class="card p-8 rounded-2xl text-center">
+                        <div class="text-5xl mb-6">&#127891;</div>
+                        <h3 class="text-3xl font-bold text-white">For Students</h3>
+                        <p class="mt-4 text-gray-300">Instant access to your results. Just enter your details and view your marks. No hassle, no waiting.</p>
+                    </div>
+                    <div class="card p-8 rounded-2xl text-center">
+                        <div class="text-5xl mb-6">&#128188;</div>
+                        <h3 class="text-3xl font-bold text-white">For Teachers</h3>
+                        <p class="mt-4 text-gray-300">A secure, feature-rich portal to manage student data. Add, update, delete, and even bulk upload records with ease.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="features" class="py-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold tracking-tight text-white">Packed with Powerful Features</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
+                        Everything you need for seamless data management.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-white">Secure Logins</h4>
+                        <p class="mt-2 text-gray-400">Hashed passwords and a dedicated login system for teachers.</p>
+                    </div>
+                    <div class="card p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-white">CRUD Operations</h4>
+                        <p class="mt-2 text-gray-400">Full control to Create, Read, Update, and Delete student records.</p>
+                    </div>
+                    <div class="card p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-white">CSV Upload</h4>
+                        <p class="mt-2 text-gray-400">Save time by uploading student data in bulk from a CSV file.</p>
+                    </div>
+                    <div class="card p-6 rounded-xl">
+                        <h4 class="text-xl font-bold text-white">Multi-Page UI</h4>
+                        <p class="mt-2 text-gray-400">A clean, organized experience powered by Streamlit's multi-page app structure.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tech-stack" class="py-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold tracking-tight text-white">Built with a Modern Stack</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
+                        Leveraging the power of Python and Streamlit for a fast and responsive experience.
+                    </p>
+                </div>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+                    <div class="card p-6 rounded-xl">
+                        <h4 class="text-2xl font-bold text-white">Streamlit</h4>
+                        <p class="mt-2 text-gray-400">For the interactive UI and multi-page structure.</p>
+                    </div>
+                    <div class="card p-6 rounded-xl">
+                        <h4 class="text-2xl font-bold text-white">Python</h4>
+                        <p class="mt-2 text-gray-400">The core logic and backend of the application.</p>
+                    </div>
+                    <div class="card p-6 rounded-xl">
+                        <h4 class="text-2xl font-bold text-white">MySQL</h4>
+                        <p class="mt-2 text-gray-400">For robust and reliable data storage.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="relative z-10 border-t border-gray-700/50">
+            <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+                <p>&copy; 2024 ResultSphere. A new era of data management.</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
