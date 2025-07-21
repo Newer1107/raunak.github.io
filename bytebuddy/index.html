@@ -1,199 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>ByteBuddy</title>
-</head>
-
-<body>
-    <main>
-    <div class="container">
-
-        <section class="header">
-            <div class="header-text">
-                <h1><u>ByteBuddy</u></h1>
-                <p>A bot which executes commands and interact with the shell in Discord</p>
-            </div>
-
-            <div class="overview">
-                <h2>Overview</h2>
-                <p>This project implements a Discord bot using Python and the `discord.py` library. The bot acts as a command execution and shell interaction tool within a designated Discord text channel. Users can execute commands, navigate the file system, and receive command output directly in the Discord channel.</p>
-            </div>
-        </section>
-
-        <div class="main-content">
-            <section class="installation-steps">
-                <h2>Installation and Usage (For Linux)</h2>
-
-                <!-- Step-one -->
-                <div class="steps step">
-                    <div class="step-one">
-                        <h3>Step 1 : Clone the repository</h3>
-                        <p>Open your terminal and navigate to the directory where you want to clone the repository.</p>
-                        <pre><code>git clone https://github.com/Newer1107/ByteBuddy</code></pre>
-                        <button class="copy-button" onclick="copyToClipboard()">Copy git clone command</button>
-                    </div>
-
-                <!-- Step-Two -->
-                    <div class="step-two step">
-                        <h3>Step 2: Set up the environment</h3>
-                        <p>Navigate to the cloned repository:</p>
-                        <pre><code>cd ByteBuddy</code></pre>
-                        <p>Create a new virtual environment:</p>
-                        <pre><code>python -m venv .</code></pre>
-                    </div>
-
-                    <!-- Step-Three -->
-                    <div class="step-three step">
-                        <h3>Step 3: Activate the virtual environment</h3>
-                        <p>Activate the virtual environment by running the following command:</p>
-                        <pre><code>source bin/activate</code></pre>
-                    </div>
-
-                    <!-- Step-Four -->
-                    <div class="step-four step">
-                        <h3>Step 4: Install dependencies</h3>
-                        <p>Install the required dependencies by running the following command:</p>
-                        <pre><code>pip install -r requirements.txt</code></pre>
-                    </div>
-
-                    <!-- Step-five -->
-                    <div class="step-five step">
-                        <h3>Step 5: Configure the bot</h3>
-                        <p>Rename the <code>.env.example</code> file to <code>.env</code>:</p>
-                        <pre><code>mv .env.example .env</code></pre>
-                        <p>Open the <code>.env</code> file and update the following lines:</p>
-
-                        <pre><code>
-BOT_TOKEN=&lt;your bot token&gt;
-OWNER_ID=&lt;your Discord ID&gt;
-CHANNEL_ID=&lt;your channel ID&gt;
-LOG_FILE_LOCATION=&lt;path to the log file&gt;
-                        </code></pre>
-
-                        <p>Replace <code>&lt;your bot token&gt;</code> with the token of your Discord bot, <code>&lt;your Discord ID&gt;</code> with your own Discord ID, <code>&lt;your channel ID&gt;</code> with the ID of the Discord channel where you want the bot to operate, and <code>&lt;path to the log file&gt;</code> with the desired location for the log file.</p>
-                    </div>
-
-                    <!-- Step-Six -->
-                    <div class="step-six step">
-                        <h3>Step 6: Customize the starting directory (optional)</h3>
-                        <p>If you want to change the starting directory for the bot's file system navigation, modify the <code>current_directory</code> variable in the code to the desired directory path.</p>
-                    </div>
-
-                    <!-- Step-Seven -->
-                    <div class="step-seven step">
-                        <h3>Step 7: Add an optional thumbnail image (optional)</h3>
-                        <p>You have the option to add a thumbnail image to the embedded system information message. To do this, follow the steps below:</p>
-                        <ol>
-                            <li>Prepare an image file (e.g., <code>arch.png</code>) that you want to use as the thumbnail.</li>
-                            <li>Copy the image file to the <code>ByteBuddy</code> directory.</li>
-                            <li>Open <code>bot.py</code> in a text editor.</li>
-                            <li>Find the line <code>arch_logo = File("ADD-IMAGE-PATH-HERE")</code>.</li>
-                            <li>Replace <code>"ADD-IMAGE-PATH-HERE"</code> with the actual path to the image file. For example: <code>arch_logo = File("arch.png")</code>.</li>
-                        </ol>
-                    </div>
-
-                    <!-- Step-Eight -->
-                    <div class="step-eight step">
-                        <h3>Step 8: Setting up the bot</h3>
-                        <p>1. Visit the <a href="https://discord.com/developers/applications">Discord Developer Portal</a>.</p>
-                        <p>2. Click on the "New Application" button.</p>
-                        <p>3. Enter a name for your application (this will be the name of your bot).</p>
-                        <p>4. Click the "Create" button.</p>
-                        <p>5. In the application dashboard, navigate to the "Bot" tab on the left sidebar.</p>
-                        <p>6. Click on the "Add Bot" button.</p>
-                        <p>7. A confirmation prompt will appear. Click "Yes, do it!" to proceed.</p>
-                        <p>8. Customize your bot's display name and profile picture by adjusting the "Username" and "Avatar" settings under the "Bot" tab.</p>
-                        <p>9. Toggle the "Public Bot" switch if you want your bot to be available publicly.</p>
-                        <p>10.Enable the necessary bot permissions under the "Bot Permissions" section. These permissions define what your bot can do on Discord servers.</p>
-                        <p>11.Scroll down and click the "Save Changes" button.</p>
-                        <p>12.Under the "Token" section, click the "Copy" button to copy the bot token. This token is a secret key that identifies your bot to Discord.</p>
-                        <p><strong>Important:</strong> Treat the bot token as sensitive information and keep it private. Do not share it publicly or include it in your code repository.</p>
-                        <p>13.Navigate to the "OAuth2" tab on the left sidebar.</p>
-                        <p>14.In the "Scopes" section, select the necessary bot permissions based on your bot's functionality.</p>
-                        <p>15.Copy the generated OAuth2 URL.</p>
-                        <p>16.Open a new browser tab and paste the URL.</p>
-                        <p>17.Choose the server where you want to invite the bot and follow the prompts to complete the invitation process.</p>
-                    </div>
-
-                    <!-- Step-Nine -->
-                    <div class="step-nine step">
-                        <h3>Step 9: Run the bot</h3>
-                        <p>Start the bot by running the following command:</p>
-                        <pre><code>python bot.py</code></pre>
-                    </div>
-
-                    <!-- Step-Ten -->
-                    <div class="step-ten step">
-                        <h3>Step 10: Interact with the bot</h3>
-                        <p>1. In the designated text channel (specified by <code>CHANNEL_ID</code> in the <code>.env</code> file), type commands to interact with the bot.</p>
-                        <p>2. Use the <code>ping</code> command to check if the bot is responding. Example: <code>!ping</code></p>
-                        <p>3. Use the <code>hello</code> command to receive a greeting from the bot. Example: <code>!hello</code></p>
-                        <p>4. Execute shell commands directly by typing them in the channel. Only the bot owner, specified by <code>OWNER_ID</code> in the <code>.env</code> file, can execute console commands.</p>
-                        <p>5. The bot will execute the command, capture the output, and display it in a formatted message.</p>
-                        <p>6. Use the <code>cd</code> command followed by a directory path to navigate the file system. Example: <code>cd /home/user/Downloads</code></p>
-                    </div>
-                </div>
-            </section>
-        </div>
-
-            <div class="images">
-                <h2>Visuals</h2>
-                <div class="img-container">
-                    <img src="visuals-2.png" alt="Discord Shell Bot Screenshot">
-                    <img src="visuals-1.png" alt="Discord Shell Bot Screenshot">
-                    <img src="visuals-3.png" alt="Discord Shell Bot Screenshot">
-                    <img src="visuals-4.png" alt="Discord Shell Bot Screenshot">
-                    <img src="visuals-5.png" alt="Discord Shell Bot Screenshot">
-                </div>
-            </div>
-
-            <section class="bot-sections">
-                <div class="custom-options">
-                    <h2>Customization Options</h2>
-                    <p>If you want to customize the bot, follow the instructions provided in the documentation.</p>
-                </div>
-            
-                <div class="bot-setup">
-                    <h2>Bot Setup</h2>
-                    <p>Set up your Discord bot by following the steps outlined in the documentation.</p>
-                </div>
-            
-                <div class="bot-interact">
-                    <h2>Interacting with the Bot</h2>
-                    <p>Once the bot is set up, interact with it using the specified commands in your designated Discord channel.</p>
-                </div>
-            
-                <div class="info">
-                    <h2>Additional Information</h2>
-                    <p>For more information and updates, visit <a href="https://github.com/Newer1107/ByteBuddy">GitHub repository</a>.</p>
-                </div>
-            </section>
-            
-        
-    </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <p>For more information, visit <a href="https://github.com/Newer1107/ByteBuddy">My GitHub</a></p>
-    </footer>
-
-    <script>
-        function copyToClipboard() {
-            const textToCopy = "git clone https://github.com/Newer1107/ByteBuddy";
-            const input = document.createElement('input');
-            input.setAttribute('value', textToCopy);
-            document.body.appendChild(input);
-            input.select();
-            document.execCommand('copy');
-            document.body.removeChild(input);
-            alert('Git clone command copied to clipboard!');
+    <title>System Guardian - Discord Bot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #111827; /* A dark blue-gray */
         }
-    </script>
-</body>
+        .glass-card {
+            background: rgba(31, 41, 55, 0.5);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+        }
+        .command-card {
+             background: #1f2937; /* gray-800 */
+             transition: background-color 0.3s ease;
+        }
+        .command-card:hover {
+            background: #374151; /* gray-700 */
+        }
+    </style>
+</head>
+<body class="text-gray-200">
 
+    <div class="relative">
+        <!-- Background Gradient -->
+        <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-gray-900 via-gray-900 to-blue-900/40 z-0"></div>
+
+        <main class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            
+            <section id="hero" class="py-24 text-center">
+                <div class="w-24 h-24 mx-auto mb-6 bg-blue-500/20 rounded-full flex items-center justify-center border border-blue-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                </div>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight text-white">
+                    System Guardian Bot
+                </h1>
+                <p class="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-gray-300">
+                    A powerful Discord bot for real-time server monitoring and remote management. Keep an eye on your system resources, execute commands, and check your game server status, all from the comfort of Discord.
+                </p>
+                <div class="mt-10">
+                    <a href="#" class="inline-block bg-blue-600 text-white font-bold text-lg px-10 py-4 rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg shadow-blue-500/20">
+                        Add to Discord
+                    </a>
+                </div>
+            </section>
+
+            <section id="features" class="py-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold tracking-tight text-white">Core Features</h2>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="glass-card p-8 rounded-2xl text-center">
+                        <h3 class="text-2xl font-bold text-white">Remote Console</h3>
+                        <p class="mt-4 text-gray-300">Execute shell commands directly and securely on your server from a dedicated Discord channel.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl text-center">
+                        <h3 class="text-2xl font-bold text-white">Live System Monitoring</h3>
+                        <p class="mt-4 text-gray-300">Get real-time updates on CPU, RAM, disk, and network usage with the `!sysinfo` command or a live-updating embed.</p>
+                    </div>
+                    <div class="glass-card p-8 rounded-2xl text-center">
+                        <h3 class="text-2xl font-bold text-white">Minecraft Server Status</h3>
+                        <p class="mt-4 text-gray-300">Check the status, player count, and latency of your Minecraft server instantly with the `!ip` command.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="commands" class="py-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold tracking-tight text-white">Commands at a Glance</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
+                        A selection of useful commands to get you started.
+                    </p>
+                </div>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-6">
+                    <div class="command-card p-4 rounded-lg">
+                        <p class="font-mono text-lg text-white">!ping</p>
+                        <p class="text-gray-400">Checks the bot's response time.</p>
+                    </div>
+                    <div class="command-card p-4 rounded-lg">
+                        <p class="font-mono text-lg text-white">!uptime</p>
+                        <p class="text-gray-400">Shows the system and bot uptime.</p>
+                    </div>
+                    <div class="command-card p-4 rounded-lg">
+                        <p class="font-mono text-lg text-white">!sysinfo</p>
+                        <p class="text-gray-400">Displays a detailed report of system resources.</p>
+                    </div>
+                    <div class="command-card p-4 rounded-lg">
+                        <p class="font-mono text-lg text-white">!top</p>
+                        <p class="text-gray-400">Shows the top 5 memory-consuming processes.</p>
+                    </div>
+                    <div class="command-card p-4 rounded-lg">
+                        <p class="font-mono text-lg text-white">!ip</p>
+                        <p class="text-gray-400">Checks the status of the configured Minecraft server.</p>
+                    </div>
+                    <div class="command-card p-4 rounded-lg">
+                        <p class="font-mono text-lg text-white">!restart / !shutdown</p>
+                        <p class="text-gray-400">Owner-only commands to manage the bot process.</p>
+                    </div>
+                </div>
+            </section>
+
+             <section id="tech-stack" class="py-20">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold tracking-tight text-white">Powered By Python</h2>
+                     <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-400">
+                        Built with powerful and reliable open-source libraries.
+                    </p>
+                </div>
+                <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+                    <div class="glass-card p-6 rounded-xl">
+                        <h4 class="text-2xl font-bold text-white">discord.py</h4>
+                        <p class="mt-2 text-gray-400">The core library for interacting with the Discord API.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <h4 class="text-2xl font-bold text-white">psutil</h4>
+                        <p class="mt-2 text-gray-400">For retrieving system information and process details.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl">
+                        <h4 class="text-2xl font-bold text-white">mcstatus</h4>
+                        <p class="mt-2 text-gray-400">For checking the status of Minecraft servers.</p>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="relative z-10 border-t border-gray-700/50">
+            <div class="container mx-auto py-8 px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+                <p>&copy; 2024 System Guardian Bot. A project by Raunak.</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
 </html>
