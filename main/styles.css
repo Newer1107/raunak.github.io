@@ -333,6 +333,8 @@ header {
     .resume-btn {
         font-size: 14px;
         padding: 12px 24px;
+        touch-action: manipulation; /* Improve touch responsiveness */
+        -webkit-tap-highlight-color: rgba(99, 102, 241, 0.3);
     }
     
     .glass-card:hover {
@@ -346,6 +348,77 @@ header {
     .magnetic-effect {
         transform: none !important; /* Disable magnetic effects on mobile */
     }
+    
+    /* Mobile menu improvements */
+    #mobile-menu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out, opacity 0.3s ease;
+        opacity: 0;
+    }
+    
+    #mobile-menu:not(.hidden) {
+        max-height: 400px;
+        opacity: 1;
+    }
+    
+    /* Mobile button improvements */
+    #mobile-menu-button {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* Navigation improvements */
+    .nav-link {
+        padding: 12px 0;
+        display: block;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(99, 102, 241, 0.3);
+        font-size: 16px; /* Prevent zoom on iOS */
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 6px;
+        margin: 4px 0;
+        padding-left: 8px;
+        padding-right: 8px;
+        transition: background-color 0.2s ease;
+    }
+    
+    .nav-link:hover {
+        background-color: rgba(99, 102, 241, 0.1);
+    }
+    
+    /* Header z-index fix */
+    header {
+        z-index: 9999;
+        position: fixed;
+    }
+    
+    /* Mobile menu specific improvements */
+    #mobile-menu a {
+        width: 100%;
+        display: block;
+        padding: 16px 12px;
+        color: #d1d5db;
+        text-decoration: none;
+        border-radius: 8px;
+        transition: all 0.2s ease;
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: rgba(99, 102, 241, 0.3);
+    }
+    
+    #mobile-menu a:hover,
+    #mobile-menu a:active {
+        background-color: rgba(99, 102, 241, 0.1);
+        color: #ffffff;
+    }
 }
 
 @media (max-width: 640px) {
@@ -356,5 +429,30 @@ header {
     .resume-btn {
         width: 100%;
         justify-content: center;
+        min-height: 48px; /* Better touch target */
+    }
+    
+    /* Better mobile menu spacing */
+    #mobile-menu .px-6 {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    
+    /* Improve touch targets */
+    .nav-link {
+        font-size: 16px; /* Prevent zoom on iOS */
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+    
+    /* Social links touch improvements */
+    .social-link {
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        touch-action: manipulation;
     }
 }

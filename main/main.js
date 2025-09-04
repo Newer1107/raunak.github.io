@@ -80,15 +80,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', scrollActive);
 
-    // Resume download functionality
+    // Resume download functionality - Fixed for mobile double-click issue
     const resumeBtn = document.getElementById('resume-btn');
     if (resumeBtn) {
-        resumeBtn.addEventListener('click', function(e) {
+        let isDownloading = false; // Prevent double downloads
+        
+        const handleResumeClick = function(e) {
             e.preventDefault();
+            e.stopPropagation();
+            
+            // Prevent multiple rapid clicks/touches
+            if (isDownloading) return;
+            isDownloading = true;
             
             // Show download animation
             const downloadIcon = this.querySelector('.download-icon');
-            downloadIcon.style.animation = 'bounce 1s infinite';
+            if (downloadIcon) {
+                downloadIcon.style.animation = 'bounce 1s infinite';
+            }
+            
+            // Add haptic feedback for mobile devices
+            if (navigator.vibrate) {
+                navigator.vibrate(50);
+            }
             
             // Check if resume file exists, otherwise show notification
             const resumePath = '/assets/Raunak_Resume.pdf';
@@ -101,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         const link = document.createElement('a');
                         link.href = resumePath;
                         link.download = 'Raunak_Resume.pdf';
+                        link.target = '_blank'; // Better for mobile browsers
                         document.body.appendChild(link);
                         link.click();
                         document.body.removeChild(link);
@@ -112,23 +127,37 @@ document.addEventListener('DOMContentLoaded', function() {
                 .catch(() => {
                     // File doesn't exist, show info message
                     showNotification('Resume download will be available soon! Please add your resume.pdf to the assets folder. 📄', 'info');
+                })
+                .finally(() => {
+                    // Reset state and animation after 2 seconds
+                    setTimeout(() => {
+                        isDownloading = false;
+                        if (downloadIcon) {
+                            downloadIcon.style.animation = '';
+                        }
+                    }, 2000);
                 });
-            
-            // Reset animation after 3 seconds
-            setTimeout(() => {
-                downloadIcon.style.animation = '';
-            }, 3000);
-        });
+        };
+        
+        // Use only click event with better mobile support
+        resumeBtn.addEventListener('click', handleResumeClick);
+        
+        // Add CSS for better mobile interaction
+        resumeBtn.style.touchAction = 'manipulation';
+        resumeBtn.style.webkitTapHighlightColor = 'rgba(99, 102, 241, 0.3)';
     }
 
-    // Notification system
+    // Notification system - Enhanced for mobile
     function showNotification(message, type = 'info') {
         const notification = document.createElement('div');
         notification.className = `notification ${type}`;
+        
+        // Detect if mobile for better positioning
+        const isMobile = window.innerWidth <= 768;
+        
         notification.style.cssText = `
             position: fixed;
-            top: 20px;
-            right: 20px;
+            ${isMobile ? 'top: 10px; left: 10px; right: 10px;' : 'top: 20px; right: 20px; max-width: 300px;'}
             padding: 15px 20px;
             background: rgba(31, 41, 55, 0.95);
             backdrop-filter: blur(10px);
@@ -136,42 +165,59 @@ document.addEventListener('DOMContentLoaded', function() {
             color: white;
             border-left: 4px solid ${type === 'success' ? '#10b981' : type === 'error' ? '#ef4444' : '#6366f1'};
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            z-index: 1000;
-            transform: translateX(100%);
+            z-index: 10000;
+            transform: ${isMobile ? 'translateY(-100%)' : 'translateX(100%)'};
             transition: transform 0.3s ease;
-            max-width: 300px;
+            font-size: ${isMobile ? '14px' : '16px'};
+            touch-action: manipulation;
         `;
         
         notification.innerHTML = `
             <div style="display: flex; align-items: center; gap: 10px;">
-                <span>${message}</span>
-                <button onclick="this.parentElement.parentElement.remove()" style="
+                <span style="flex: 1;">${message}</span>
+                <button class="notification-close" style="
                     background: none;
                     border: none;
                     color: #9ca3af;
                     cursor: pointer;
                     font-size: 18px;
                     padding: 0;
-                    margin-left: auto;
+                    min-width: 24px;
+                    min-height: 24px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    touch-action: manipulation;
                 ">&times;</button>
             </div>
         `;
         
-        document.body.appendChild(notification);
-        
-        // Trigger animation
-        setTimeout(() => {
-            notification.style.transform = 'translateX(0)';
-        }, 100);
-        
-        // Auto remove after 5 seconds
-        setTimeout(() => {
-            notification.style.transform = 'translateX(100%)';
+        // Add close functionality
+        const closeBtn = notification.querySelector('.notification-close');
+        const closeNotification = () => {
+            notification.style.transform = isMobile ? 'translateY(-100%)' : 'translateX(100%)';
             setTimeout(() => {
                 if (notification.parentNode) {
                     notification.remove();
                 }
             }, 300);
+        };
+        
+        closeBtn.addEventListener('click', closeNotification);
+        closeBtn.addEventListener('touchstart', closeNotification);
+        
+        document.body.appendChild(notification);
+        
+        // Trigger animation
+        setTimeout(() => {
+            notification.style.transform = isMobile ? 'translateY(0)' : 'translateX(0)';
+        }, 100);
+        
+        // Auto remove after 5 seconds
+        setTimeout(() => {
+            if (notification.parentNode) {
+                closeNotification();
+            }
         }, 5000);
     }
 
@@ -400,31 +446,106 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Mobile menu functionality
+    // Mobile menu functionality - Enhanced for better mobile experience
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     
     if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
-            mobileMenu.classList.toggle('hidden');
+        let isToggling = false; // Prevent rapid toggle spam
+        
+        // Mobile menu toggle - Fixed for double-click issue
+        const toggleMenu = function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            if (isToggling) return;
+            isToggling = true;
+            
+            const isHidden = mobileMenu.classList.contains('hidden');
+            
+            if (isHidden) {
+                mobileMenu.classList.remove('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'true');
+            } else {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            }
             
             // Animate the hamburger menu
-            const svg = this.querySelector('svg');
+            const svg = mobileMenuButton.querySelector('svg');
             if (mobileMenu.classList.contains('hidden')) {
                 svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
             } else {
                 svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
             }
+            
+            // Reset toggle lock after animation
+            setTimeout(() => {
+                isToggling = false;
+            }, 300);
+        };
+        
+        // Use only click event with better mobile support
+        mobileMenuButton.addEventListener('click', toggleMenu);
+        
+        // Add CSS for better mobile interaction
+        mobileMenuButton.style.touchAction = 'manipulation';
+        mobileMenuButton.style.webkitTapHighlightColor = 'transparent';
+        
+        // Close mobile menu when clicking on a link - Fixed navigation
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            const handleLinkClick = (e) => {
+                // Don't prevent default - let the navigation happen
+                // Just close the menu after a short delay
+                setTimeout(() => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    const svg = mobileMenuButton.querySelector('svg');
+                    svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                }, 100); // Small delay to allow navigation
+            };
+            
+            // Only use click event to avoid double handling
+            link.addEventListener('click', handleLinkClick);
+            
+            // Add better mobile styling
+            link.style.touchAction = 'manipulation';
+            link.style.webkitTapHighlightColor = 'rgba(99, 102, 241, 0.3)';
         });
         
-        // Close mobile menu when clicking on a link
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenuButton.querySelector('svg').innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
-            });
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!mobileMenu.contains(e.target) && !mobileMenuButton.contains(e.target)) {
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                    const svg = mobileMenuButton.querySelector('svg');
+                    svg.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+                }
+            }
         });
+        
+        // Add ARIA attributes for accessibility
+        mobileMenuButton.setAttribute('aria-expanded', 'false');
+        mobileMenuButton.setAttribute('aria-controls', 'mobile-menu');
     }
 
     console.log('🚀 Enhanced interactive features loaded successfully!');
+    
+    // Mobile debug information
+    if (window.innerWidth <= 768) {
+        console.log('📱 Mobile device detected:', {
+            width: window.innerWidth,
+            height: window.innerHeight,
+            userAgent: navigator.userAgent,
+            touchSupport: 'ontouchstart' in window,
+            mobileMenuFound: !!document.getElementById('mobile-menu'),
+            resumeBtnFound: !!document.getElementById('resume-btn')
+        });
+        
+        // Show mobile-friendly debug notification
+        setTimeout(() => {
+            showNotification('Mobile optimizations loaded! 📱', 'success');
+        }, 2000);
+    }
 });
