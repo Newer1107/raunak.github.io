@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+    <title>Raunak - Web Developer & IT Professional</title>
+    <link rel="stylesheet" href="/main/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased">
+
+    <!-- Page Loader -->
+    <div class="page-loader" id="page-loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+            <h2 class="text-lg font-semibold">Loading Content...</h2>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white hover:text-indigo-400 transition-colors">Raunak</a>
+            <div class="hidden md:flex space-x-8" id="nav-menu">
+                <a href="#about" class="nav-link text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="#skills" class="nav-link text-gray-300 hover:text-white transition-colors">Skills</a>
+                <a href="#work" class="nav-link text-gray-300 hover:text-white transition-colors">Work</a>
+                <a href="#resume-download" class="nav-link text-gray-300 hover:text-indigo-400 transition-colors">Resume</a>
+            </div>
+            
+            <!-- Mobile menu button -->
+            <button class="md:hidden text-gray-300 hover:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500 rounded-md p-2" id="mobile-menu-button" aria-label="Toggle mobile menu" type="button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+            
+            <a href="mailto:contact@raunakcodes.me" class="hidden md:block bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors">Contact Me</a>
+        </nav>
+        
+        <!-- Mobile menu -->
+        <div class="md:hidden bg-gray-900/95 backdrop-filter backdrop-blur-lg border-t border-gray-700 hidden" id="mobile-menu">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#about" class="nav-link block text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="#skills" class="nav-link block text-gray-300 hover:text-white transition-colors">Skills</a>
+                <a href="#work" class="nav-link block text-gray-300 hover:text-white transition-colors">Work</a>
+                <a href="#resume-download" class="nav-link block text-gray-300 hover:text-indigo-400 transition-colors">Resume</a>
+                <a href="mailto:contact@raunakcodes.me" class="block bg-indigo-600 text-white px-5 py-2 rounded-lg hover:bg-indigo-700 transition-colors text-center">Contact Me</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-screen flex items-center">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight">
+                        Hi, I'm <span class="text-indigo-400">Raunak</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl mt-4 text-gray-300">I'm a <span id="typed-text"></span></h2>
+                    <p class="mt-6 text-lg text-gray-400">
+                        A passionate student and developer creating innovative solutions and exploring the world of technology.
+                    </p>
+                    
+                    <!-- Resume Download Button -->
+                    <div class="mt-8 flex flex-col sm:flex-row justify-center md:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-6">
+                        <a href="#resume-download" id="resume-btn" class="resume-btn bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:shadow-indigo-500/30 transition-all duration-300 hover:scale-105 flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="download-icon">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7,10 12,15 17,10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                            <span>Download Resume</span>
+                        </a>
+                        
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/Newer1107/" target="_blank" class="social-link text-gray-400 hover:text-white transition-all duration-300 hover:scale-110">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            </a>
+                            <a href="https://instagram.com/raunakrajputtt" target="_blank" class="social-link text-gray-400 hover:text-white transition-all duration-300 hover:scale-110">
+                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                            </a>
+                            <a href="https://discord.com/users/964547951273840650" target="_blank" class="social-link text-gray-400 hover:text-white transition-all duration-300 hover:scale-110">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8"><path d="M20.317 4.3698a19.7913 19.7913 0 0 0-4.8851-1.5152.0741.0741 0 0 0-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3847-.3973-.8742-.6083-1.2495a.0741.0741 0 0 0-.0785-.0371 19.7363 19.7363 0 0 0-4.8851 1.5152.069.069 0 0 0-.0321.0256C.7348 6.5566 0 8.3342 0 9.9495c0 4.0058 1.7348 7.6266 3.8914 9.2862.057.0448.1357.0432.1922-.0056 2.5447-2.1037 3.4813-3.5182 3.8145-5.0032a.0741.0741 0 0 0-.0432-.0861c-.3781-.1446-.7446-.3167-1.0979-.5097a.0741.0741 0 0 0-.0948.0115c-.2584.2474-.5.4812-.7178.7018a.0741.0741 0 0 0 .0115.1012c.9898.7983 1.8033 1.4587 2.4466 1.9542a.069.069 0 0 0 .0861-.0016c.0448-.0337.0785-.0846.0741-.1357-.0814-.9258-.14-1.8532-.1636-2.7843a.0741.0741 0 0 0-.0056-.0432c-.0115-.019-.0269-.0337-.0432-.0448-.057-.0256-.114-.0432-.171-.05.0115-.0056.025-.0115.0371-.019a.0741.0741 0 0 0 .0432-.0432c.1446-.358.305-.7025.478-.1.0448.0115.0861.025.122.0432a.0741.0741 0 0 0 .0861 0c.3665-.193.733-.3651 1.0979-.5097a.0741.0741 0 0 0 .0948-.0115c.2178-.2206.4595-.4544.7178-.7018a.0741.0741 0 0 0-.0115-.1012c-.6433-.4956-1.4568-1.1559-2.4466-1.9542a.069.069 0 0 0-.0861.0016c-.0448.0337-.0785.0846-.0741.1357.0236.9314.0814 1.8588.1636 2.7843.0016.05.019.0981.0432.1357.025.0432.0654.0741.1097.0861.05.0115.1012.0056.1446-.0115.0432-.019.0814-.0432.1105-.0741l.0115-.019c.173-.2975.3333-.642.478-1.001.019-.0432.03-0.09.03-0.1357a.0741.0741 0 0 0-.0432-.0654c-.057-.0115-.114-.0115-.171-.0016a.0741.0741 0 0 0-.0432.0371c-.0115.0115-.025.025-.0371.0371-.05.057-.0861.122-.1012.1922-.0115.0814-.0115.1636.0016.2458.0115.0814.03.1636.057.2384.025.0814.0654.152.1105.2178.0432.0654.1012.1176.1636.1636.0625.0448.1357.0785.211.0981.0814.019.1636.025.2458.019.0814-.0056.1576-.03.2328-.0654.0752-.03.1446-.0741.2053-.122.0625-.05.1176-.1105.1636-.1773.0448-.0654.0814-.14.1105-.2178.03-.0752.05-0.1576.057-.2458.0056-.0814.0056-.1636 0-.2458a.521.521 0 0 0-.1012-.358c-.0115-.019-.03-.03-.0432-.0432a.0741.0741 0 0 0-.0654-.025h-.0056c-.057.0056-.108.03-.152.0654-.0448.0432-.0785.0981-.09.1576-.0115.0654-.0115.1357 0 .2053.0115.0654.0371.122.0741.171.0371.05.0814.0861.1357.1105.05.025.1105.0371.1636.0371.057 0 .1105-.0115.1636-.0371s.1012-.05.1446-.0861c.0432-.0432.0814-.0861.1105-.1357.03-.05.05-.1105.057-.171.0056-.057.0056-.1176 0-.171a.452.452 0 0 0-.057-.171c-.03-.05-.0654-.1-.1105-.1446a.393.393 0 0 0-.1446-.1012c-.05-.025-.1105-.0371-.1636-.0371-.057 0-.1105.0115-.1636.0371a.393.393 0 0 0-.1446.1012c-.0432.0432-.0814.09-.1105.1446-.03.05.05.1105.057.171.0056.0625.0056.122 0 .1828a.452.452 0 0 0 .057.171c.03.05.0654.1.1105.1446.0432.0432.09.0814.1446.1012.05.025.1105.0371.1636.0371.057 0 .1105-.0115.1636-.0371.05-.025.1012-.05.1446-.0861.0432-.0432.0814-.0861.1105-.1357.03-.05.05-.1105.057-.171.0056-.057.0056-.1176 0-.171a.452.452 0 0 0-.057-.171c-.03-.05-.0654-.1-.1105-.1446a.393.393 0 0 0-.1446-.1012c-.05-.025-.1105-.0371-.1636-.0371-1.2282.0016-2.4563.0016-3.6845 0-.057 0-.1105.0115-.1636.0371a.393.393 0 0 0-.1446.1012c-.0432.0432-.0814.09-.1105.1446-.03.05-.05.1105-.057.171-.0056.057-.0056.1176 0 .171.0056.05.025.1.057.1446a.393.393 0 0 0 .1446.1012c.05.025.1105.0371.1636.0371s.1105-.0115.1636-.0371a.393.393 0 0 0 .1446-.1012c.0432-.0432.0814-.09.1105-.1446.03-.05.05-.1105.057-.171.0056-.0625.0056-.122 0-.1828a.452.452 0 0 0-.057-.171c-.03-.05-.0654-.1-.1105-.1446a.393.393 0 0 0-.1446-.1012c-.05-.025-.1105-.0371-.1636-.0371-.057 0-.1105.0115-.1636.0371a.393.393 0 0 0-.1446.1012c-.0432.0432-.0814-.09-.1105-.1446-.03-.05-.05-.1105-.057-.171-.0056-.057-.0056-.1176 0-.171.0056-.05.025-.1.057-.1446.03-.0432.0654-.0814.1105-.1012a.393.393 0 0 0 .1446-.0371c.05-.0115.1105-.0115.1636 0h.0056c.057 0 .1105.0115.1636.0371.05.025.1012.05.1446.1012.0432.0432.0814.09.1105.1446.03.05.05.1105.057.171.0056.0625.0056.122 0 .1828a.452.452 0 0 0-.057.171c-.03.05-.0654.1-.1105.1446a.393.393 0 0 0-.1446.1012c-.05.025-.1105.0371-.1636.0371-.057 0-.1105-.0115-.1636-.0371a.393.393 0 0 0-.1446-.1012c-.0432-.0432-.0814-.09-.1105-.1446-.03-.05-.05-.1105-.057-.171-.0056-.0625-.0056-.122 0-.1828a.452.452 0 0 0 .057-.171c.03-.05.0654-.1.1105-.1446.0432-.0432.09-.0814.1446-.1012.05-.025.1105-.0371.1636-.0371.057 0 .1105-.0115.1636-.0371.05-.025.1012-.05.1446-.0861.0432-.0432.0814-.0861.1105-.1357.03-.05.05-.1105.057-.171.0056-.057.0056-.1176 0-.171a.452.452 0 0 0-.057-.171c-.03-.05-.0654-.1-.1105-.1446a.393.393 0 0 0-.1446-.1012c-.05-.025-.1105-.0371-.1636-.0371-1.2282.0016-2.4563.0016-3.6845 0-.057 0-.1105.0115-.1636.0371a.393.393 0 0 0-.1446.1012c-.0432.0432-.0814.09-.1105.1446-.03.05-.05.1105-.057.171-.0056.057-.0056.1176 0 .171.0056.05.025.1.057.1446a.393.393 0 0 0 .1446.1012c.05.025.1105.0371.1636.0371s.1105-.0115.1636-.0371a.393.393 0 0 0 .1446-.1012c.0432-.0432.0814-.09.1105-.1446.03-.05.05-.1105.057-.171.0056-.0625.0056-.122 0-.1828a.452.452 0 0 0-.057-.171c-.03-.05-.0654-.1-.1105-.1446a.393.393 0 0 0-.1446-.1012c-.05-.025-.1105-.0371-.1636-.0371-.057 0-.1105.0115-.1636.0371a.393.393 0 0 0-.1446.1012c-.0432.0432-.0814-.09-.1105-.1446-.03-.05-.05-.1105-.057-.171-.0056-.057-.0056-.1176 0-.171.0056-.05.025-.1.057-.1446.03-.0432.0654-.0814.1105-.1012a.393.393 0 0 0 .1446-.0371c.05-.0115.1105-.0115.1636 0h.0056c.057 0 .1105.0115.1636.0371.05.025.1012.05.1446.1012.0432.0432.0814.09.1105.1446.03.05.05.1105.057.171.0056.0625.0056.122 0 .1828a.452.452 0 0 0-.057.171c-.03.05-.0654.1-.1105.1446a.393.393 0 0 0-.1446.1012c-.05.025-.1105.0371-.1636.0371-.057 0-.1105-.0115-.1636-.0371a.393.393 0 0 0-.1446-.1012c-.0432-.0432-.0814-.09-.1105-.1446-.03-.05-.05-.1105-.057-.171-.0056-.0625-.0056-.122 0-.1828a.452.452 0 0 0 .057-.171c.03-.05.0654-.1.1105-.1446.0432-.0432.09-.0814.1446-.1012.05-.025.1105-.0371.1636-.0371.057 0 .1105-.0115.1636-.0371.05-.025.1012-.05.1446-.0861.0432-.0432.0814-.0861.1105-.1357.03-.05.05-.1105.057-.171.0056-.057.0056-.1176 0-.171a.452.452 0 0 0-.057-.171c-.03-.05-.0654-.1-.1105-.1446a.393.393 0 0 0-.1446-.1012c-.05-.025-.1105-.0371-.1636-.0371-1.2282.0016-2.4563.0016-3.6845 0-.057 0-.1105.0115-.1636.0371a.393.393 0 0 0-.1446.1012c-.0432.0432-.0814.09-.1105.1446-.03.05-.05.1105-.057.171-.0056.057-.0056.1176 0 .171.0056.05.025.1.057.1446a.393.393 0 0 0 .1446.1012c.05.025.1105.0371.1636.0371s.1105-.0115.1636-.0371a.393.393 0 0 0 .1446-.1012c.0432-.0432.0814-.09.1105-.1446.03-.05.05-.1105.057-.171.0056-.0625.0056-.122 0-.1828a.452.452 0 0 0-.057-.171c-.03-.05-.0654-.1-.1105-.1446a.393.393 0 0 0-.1446-.1012c-.05-.025-.1105-.0371-.1636-.0371-.057 0-.1105.0115-.1636.0371a.393.393 0 0 0-.1446.1012c-.0432.0432-.0814-.09-.1105-.1446-.03-.05-.05-.1105-.057-.171-.0056-.057-.0056-.1176 0-.171.0056-.05.025-.1.057-.1446.03-.0432.0654-.0814.1105-.1012a.393.393 0 0 0 .1446-.0371c.05-.0115.1105-.0115.1636 0h.0056c.057 0 .1105.0115.1636.0371.05.025.1012.05.1446.1012.0432.0432.0814.09.1105.1446.03.05.05.1105.057.171.0056.0625.0056.122 0 .1828a.452.452 0 0 0-.057.171c-.03.05-.0654.1-.1105.1446a.393.393 0 0 0-.1446.1012c-.05.025-.1105.0371-.1636.0371-.057 0-.1105-.0115-.1636-.0371a.393.393 0 0 0-.1446-.1012c-.0432-.0432-.0814-.09-.1105-.1446-.03-.05-.05-.1105-.057-.171-.0056-.0625-.0056-.122 0-.1828a.452.452 0 0 0 .057-.171c.03-.05.0654-.1.1105-.1446.0432-.0432.09-.0814.1446-.1012.05-.025.1105-.0371.1636-.0371.057 0 .1105-.0115.1636-.0371.05-.025.1012-.05.1446-.0861.0432-.0432.0814-.0861.1105-.1357.03-.05.05-.1105.057-.171.0056-.057.0056-.1176 0-.171a.452.452 0 0 0-.057-.171c-.03-.05-.0654-.1-.1105-.1446a.393.393 0 0 0-.1446-.1012c-.05-.025-.1105-.0371-.1636-.0371-1.2282.0016-2.4563.0016-3.6845 0-.057 0-.1105.0115-.1636.0371a.393.393 0 0 0-.1446.1012c-.0432.0432-.0814.09-.1105.1446-.03.05-.05.1105-.057.171-.0056.057-.0056.1176 0 .171.0056.05.025.1.057.1446a.393.393 0 0 0 .1446.1012c.05.025.1105.0371.1636.0371s.1105-.0115.1636-.0371a.393.393 0 0 0 .1446-.1012c.0432-.0432.0814-.09.1105-.1446.03-.05.05-.1105.057-.171.0056-.0625.0056-.122 0-.1828a.452.452 0 0 0-.057-.171c-.03-.05-.0654-.1-.1105-.1446a.393.393 0 0 0-.1446-.1012c-.05-.025-.1105-.0371-.1636-.0371-.057 0-.1105.0115-.1636.0371a.393.393 0 0 0-.1446.1012c-.0432.0432-.0814-.09-.1105-.1446-.03-.05-.05-.1105-.057-.171-.0056-.057-.0056-.1176 0-.171.0056-.05.025-.1.057-.1446.03-.0432.0654-.0814.1105-.1012a.393.393 0 0 0 .1446-.0371c.05-.0115.1105-.0115.1636 0h.0056c.057 0 .1105.0115.1636.0371.05.025.1012.05.1446.1012.0432.0432.0814.09.1105.1446.03.05.05.1105.057.171.0056.0625.0056.122 0 .1828a.452.452 0 0 0-.057.171c-.03.05-.0654.1-.1105.1446a.393.393 0 0 0-.1446.1012c-.05.025-.1105.0371-.1636.0371-.057 0-.1105-.0115-.1636-.0371a.393.393 0 0 0-.1446-.1012c-.0432-.0432-.0814-.09-.1105-.1446-.03-.05-.05-.1105-.057-.171-.0056-.0625-.0056-.122 0-.1828a.452.452 0 0 0 .057-.171c.03-.05.0654-.1.1105-.1446.0432-.0432.09-.0814.1446-.1012.05-.025.1105-.0371.1636-.0371h3.8145c2.5447 1.4587 3.8914 5.2804 3.8914 9.2862 0 1.6153-.7348 3.3929-2.1917 5.5705.057.0448.1357.0432.1922-.0056 2.1566-1.6596 3.8914-5.2804 3.8914-9.2862 0-1.6153-.7348-3.3929-2.1917-5.5705a.069.069 0 0 0-.0321-.0256zM8.02 15.3312c-1.1835 0-2.1566-1.084-2.1566-2.418s.9731-2.418 2.1566-2.418c1.1835 0 2.1566 1.084 2.1566 2.418s-.9731 2.418-2.1566 2.418zm7.96 0c-1.1835 0-2.1566-1.084-2.1566-2.418s.9731-2.418 2.1566-2.418c1.1835 0 2.1566 1.084 2.1566 2.418s-.9731 2.418-2.1566 2.418z"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="w-80 h-80 lg:w-96 lg:h-96 relative hero-image-container">
+                        <div class="absolute inset-0 bg-indigo-500 rounded-full -translate-x-4 -translate-y-4"></div>
+                        <div class="absolute inset-0 bg-gray-800 rounded-full overflow-hidden hover:scale-105 transition-transform duration-300 cursor-pointer">
+                            <img src="https://placehold.co/400x400/1f2937/a78bfa?text=Raunak" alt="Raunak" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-indigo-900/80 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                                <div class="text-white">
+                                    <p class="text-sm font-medium">💻 Coding Enthusiast</p>
+                                    <p class="text-xs opacity-80">Click to learn more!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <img src="https://placehold.co/600x600/111827/4f46e5?text=About" alt="About Raunak" class="rounded-lg shadow-2xl">
+                </div>
+                <div class="reveal">
+                    <h2 class="text-3xl font-bold text-white mb-4">About Me</h2>
+                    <p class="text-gray-400 mb-4">
+                        Hello! I'm Raunak, a student with a deep passion for technology and a love for challenges. I'm an avid music listener and enjoy staying active. My fascination with computers has led me to explore various programming languages and operating systems, with a special interest in Linux.
+                    </p>
+                    <p class="text-gray-400">
+                        I'm committed to balancing my studies while continuously expanding my coding skills. I thrive on learning new things and believe that determination and a love for technology are key to success.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-20">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-white mb-12">My Tech Stack</h2>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="glass-card p-6 rounded-lg reveal">
+                    <p class="text-4xl mb-2">💻</p>
+                    <h3 class="text-xl font-semibold text-white">Frontend</h3>
+                    <p class="text-gray-400 mt-2">HTML, CSS, JavaScript</p>
+                </div>
+                 <div class="glass-card p-6 rounded-lg reveal">
+                    <p class="text-4xl mb-2">🐍</p>
+                    <h3 class="text-xl font-semibold text-white">Backend</h3>
+                    <p class="text-gray-400 mt-2">Python, NodeJS</p>
+                </div>
+                 <div class="glass-card p-6 rounded-lg reveal">
+                    <p class="text-4xl mb-2">🐧</p>
+                    <h3 class="text-xl font-semibold text-white">OS & Tools</h3>
+                    <p class="text-gray-400 mt-2">Linux, Docker, Git</p>
+                </div>
+                 <div class="glass-card p-6 rounded-lg reveal">
+                    <p class="text-4xl mb-2">☁️</p>
+                    <h3 class="text-xl font-semibold text-white">DevOps</h3>
+                    <p class="text-gray-400 mt-2">Virtual Machines, Hosting</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="py-20">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-white mb-12">My Projects</h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <a href="https://raunakcodes.me/distro-selector" target="_blank" class="project-card block bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-indigo-500/30 transition-shadow reveal">
+                    <img src="https://placehold.co/600x400/1f2937/e0e7ff?text=Distro+Selector" alt="Distro Selector Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">Distro Selector</h3>
+                        <p class="mt-2 text-gray-400">An app to help you choose a Linux distribution.</p>
+                    </div>
+                </a>
+
+                <a href="https://raunakcodes.me/resultsphere" target="_blank" class="project-card block bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-indigo-500/30 transition-shadow reveal">
+                    <img src="https://placehold.co/600x400/1f2937/e0e7ff?text=ResultSphere" alt="ResultSphere Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">ResultSphere</h3>
+                        <p class="mt-2 text-gray-400">A student results management system.</p>
+                    </div>
+                </a>
+
+                <a href="https://raunakcodes.me/flashcards" target="_blank" class="project-card block bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-indigo-500/30 transition-shadow reveal">
+                    <img src="https://placehold.co/600x400/1f2937/e0e7ff?text=Flashcards" alt="Flashcards Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">Flashcards App</h3>
+                        <p class="mt-2 text-gray-400">A tool for effective learning and memorization.</p>
+                    </div>
+                </a>
+                
+                <a href="https://raunakcodes.me/bytebuddy" target="_blank" class="project-card block bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-indigo-500/30 transition-shadow reveal">
+                    <img src="https://placehold.co/600x400/1f2937/e0e7ff?text=ByteBuddy" alt="ByteBuddy Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">ByteBuddy</h3>
+                        <p class="mt-2 text-gray-400">A Discord chatbot with bash integration.</p>
+                    </div>
+                </a>
+
+            <a href="https://raunakcodes.me/random-cat-images" target="_blank" class="project-card block bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-indigo-500/30 transition-shadow reveal">
+                    <img src="https://placehold.co/600x400/1f2937/e0e7ff?text=Random+Cat+Images" alt="Random Cat Images Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">Random Cat Images</h3>
+                        <p class="mt-2 text-gray-400">Generates random images of cats.</p>
+                    </div>
+                </a>
+
+                <a href="https://raunakcodes.me/birthdates" target="_blank" class="project-card block bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-indigo-500/30 transition-shadow reveal">
+                    <img src="https://placehold.co/600x400/1f2937/e0e7ff?text=Birthdate+App" alt="Birthdate Project" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white">Birthdate App</h3>
+                        <p class="mt-2 text-gray-400">Track birthdays of your friends and family.</p>
+                    </div>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="/main/main.js"></script>
+</body>
+</html>

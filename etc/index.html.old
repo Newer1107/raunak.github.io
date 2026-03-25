@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main/styles.css">
+        <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+        <!-- =====BOX ICONS===== -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+        <title>About Raunak</title>
+        <link rel="icon" type="image/x-icon" href="main/images/favicon.ico">
+        <meta name="google-adsense-account" content="ca-pub-8754701107619645">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8754701107619645" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <body style="background-color:white;">
+        <!--===== HEADER =====-->
+        <header class="l-header">
+            <nav class="nav bd-grid">
+                <div>
+                    <a href="#" class="nav__logo">Home</a>
+                </div>
+
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="#home" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
+                       <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
+                        
+                    </ul>
+                </div>
+
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </nav>
+        </header>
+
+        <main class="l-main">
+            <!--===== HOME =====-->
+            <section class="home bd-grid" id="home">
+                <div class="home__data">
+                    <h1 class="home__title">Hi,<br>I'm <span class="home__title-color">Raunak</span><br> <span class="auto-type"></span></h1>
+
+                    <a href="#" onclick="location.href='mailto:contact@raunakcodes.me'" class="button">Contact Me</a>
+                </div>
+
+                <div class="home__social">
+                    <a href="https://instagram.com/raunakrajputtt" target="_blank" class="home__social-icon"><i class="bx bxl-instagram" style="position: relative; top: -67px; left: 13px;"></i></a>
+                    <a href="https://discord.com/users/964547951273840650" target="_blank" class="home__social-icon"><i class="bx bxl-discord" style="position: relative; top: -66px; left: 13px;"></i></i></a>
+                    <a href="https://github.com/Newer1107/" target="_blank" class="home__social-icon"><i class="bx bxl-github" style="position: relative; top: -67px; left: 12px;"></i></a>
+                </div>
+
+                <div class="home__img">
+                    <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <mask id="mask0" mask-type="alpha">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                        </mask>
+                        <g mask="url(#mask0)">
+                            <path d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"/>
+                            <image class="home__blob-img" x="50" y="60" href="main/images/perfil3.webp">
+                        </g>
+                    </svg>
+                </div>
+            </section>
+
+            <!--===== ABOUT =====-->
+            <section class="about section " id="about">
+                <h2 class="section-title">About</h2>
+
+                <div class="about__container bd-grid">
+                    <div class="about__img">
+                        <img src="main/images/perfil2.webp" alt="">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">Hello, I'm Raunak</h2>
+                        <p class="about__text">Hey there! I am Raunak, a student with a passion for technology and a love for challenge. I am an avid listener of music, and enjoy spending my free time engaging in physical activities. My interests in technology and computers have allowed me to develop a deep understanding and appreciation for their capabilities. As a student, I am committed to balancing my coursework while also expanding my knowledge and skills in coding. Despite the challenges, I find great joy in developing my abilities and embracing new opportunities to learn. Through my love of challenge, I have gained a unique perspective on life that has helped me to become more resilient, focused, and driven. I believe that the combination of hard work, determination, and a love of technology are key to achieving success, both academically and in my future career.</p>           
+                    </div>                                   
+                </div>
+            </section>
+
+            <!--===== SKILLS =====-->
+            <section class="skills section" id="skills">
+                <h2 class="section-title">Skills</h2>
+
+                <div class="skills__container bd-grid">          
+                    <div>
+                        <h2 class="skills__subtitle">Profesional Skills</h2>
+                        <p class="skills__text">In terms of technical skills, I am well-versed in several programming languages, including HTML, CSS, JavaScript, Java, Python, and C++/C. My knowledge of these languages varies, but I am continuously learning and improving my skills in each of them. Additionally, I have a solid understanding of operating systems, particularly as an Arch Linux user. I have gained knowledge and hands-on experience with virtual machines, allowing me to create and manage isolated environments for various purposes. Moreover, I am familiar with the process of hosting home web services, enabling me to deploy and maintain websites or applications from my own environment. In addition, I have developed proficiency in Docker, a powerful containerization tool. I can effectively package, deploy, and manage applications using Docker, ensuring consistency and scalability in the development and deployment processes. Alongside my dedication to improving my skills, I am also adept at balancing coursework and schoolwork commitments. I am deeply committed to achieving my goals and approach every task with a strong sense of determination and a willingness to do whatever it takes to succeed.</p>
+
+                    </div>
+                    
+                    <div class="about__img">              
+                        <img src="main/images/perfil4.webp" alt="">
+                </div>
+            </section>
+
+            <!-- <section class="about section" id="additional">
+                <h2 class="section-title">Hardware Info</h2>
+
+                <div class="skills__container bd-grid">
+                    <div class="skills__img bd-grid">
+                        <img src="assets/img/work1.jpg" alt="" class="skills__img">
+                    </div>
+                    
+                    <div>
+                        <h2 class="about__subtitle">Hello, I'am Raunak</h2>
+                        <p class="about__text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique, commodi odio perspiciatis, sunt blanditiis possimus, non sit impedit ullam porro cumque. Pariatur beatae in amet doloremque, fuga praesentium mollitia voluptates.</p>           
+                    </div>                                   
+                </div>
+            </section> -->
+
+            <!--===== WORK =====-->
+           <section class="work section" id="work">
+                <h2 class="section-title">Work</h2>
+
+                <div class="work__container bd-grid">
+                    <a href="https://raunakcodes.me/distro-selector" target="_blank" class="work__img">
+                        <img src="main/images/distro.jpg" alt="">
+                    </a>
+                    <a href="https://raunakcodes.me/birthdates" target="_blank" class="work__img">
+                        <img src="main/images/birthdate1.webp" alt="">
+                    </a>
+                    <a href="https://raunakcodes.me/flashcards" target="_blank" class="work__img">
+                        <img src="main/images/flashcards.jpg" alt="">
+                    </a>
+                    <a href="/random-cat-images/index.html" target="_blank" class="work__img">
+                        <img src="main/images/catimgs.webp" alt="">
+                    </a> 
+                    <a href="https://raunakcodes.me/bytebuddy" class="work__img">
+                        <img src="main/images/bytebuddy.webp" alt="">
+                    </a>
+                    <a href="https://raunakcodes.me/resultsphere" class="work__img">
+                        <img src="main/images/resultsphere.jpg" alt="">
+                    </a>
+                </div>
+            </section>
+            <div class="flashcard">
+  <div class="content">
+    <h3>Check out my birthday project!</h3>
+    <p>See all the birthdays collected and find out whose birthday is the nearest!</p>
+    <a href="https://raunakcodes.me/birthdates" target="_blank" style="text-align: center;">Go to Project Website</a>
+  </div>
+  <button class="close-button">&times;</button>
+</div>
+
+            <!--===== CONTACT =====-->
+        </main>
+
+        <!--===== FOOTER =====-->
+        <footer class="footer">
+            <p class="footer__title">Thanks for Visiting!</p>
+            <div class="footer__social">
+                <a href="https://discord.com/users/964547951273840650" target="_blank" class="footer__icon"><i class='bx bxl-discord' ></i></a>
+                <a href="https://instagram.com/raunakrajputtt" target="_blank" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                <a href="https://github.com/Newer1107/" target="_blank" class="footer__icon"><i class='bx bxl-github' ></i></a>
+            </div>
+            
+        </footer>
+
+
+        <!--===== SCROLL REVEAL =====-->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--===== MAIN JS =====-->
+        <script src="main/main.js"></script>
+        
+    </body>
+</html>
