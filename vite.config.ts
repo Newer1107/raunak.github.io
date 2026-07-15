@@ -6,6 +6,7 @@ export default defineConfig({
   server: {
     host: '::',
     port: 8080,
+    allowedHosts: ['raunaktech.site'],
     hmr: {
       overlay: false,
     },
