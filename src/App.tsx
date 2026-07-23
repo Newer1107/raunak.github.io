@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Index from './pages/Index';
 import NotFound from './pages/NotFound';
+import ProjectCoEPortal from './pages/ProjectCoEPortal';
 import ProjectCivicResolve from './pages/ProjectCivicResolve';
 import ProjectDashboard from './pages/ProjectDashboard';
 import ProjectAnnadaan from './pages/ProjectAnnadaan';
@@ -22,6 +23,7 @@ const App = () => (
         <ScrollToTopRoute />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/project/coe-portal" element={<ProjectCoEPortal />} />
           <Route path="/project/civicresolve" element={<ProjectCivicResolve />} />
           <Route path="/project/dashboard" element={<ProjectDashboard />} />
           <Route path="/project/annadaan" element={<ProjectAnnadaan />} />

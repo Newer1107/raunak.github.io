@@ -19,7 +19,7 @@ const projects = [
       'MinIO',
     ],
     githubUrl: 'https://github.com/Newer1107',
-    detailsUrl: 'https://github.com/Newer1107',
+    detailsUrl: '/project/coe-portal',
     period: 'Jan. 2025 – Present',
   },
   {
